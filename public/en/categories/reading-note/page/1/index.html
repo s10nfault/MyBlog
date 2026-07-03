@@ -1,0 +1,11 @@
+<script>
+    (function() {
+        
+        var lang = navigator.language || navigator.userLanguage;
+        if (lang.indexOf('zh') !== -1) {
+            window.location.replace('/cn/');
+        } else {
+            window.location.replace('/en/');
+        }
+    })();
+</script>

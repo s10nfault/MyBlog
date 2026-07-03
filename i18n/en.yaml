@@ -32,6 +32,8 @@ markdown: "Markdown"
 gfm: "GFM"
 tutorial: "Tutorial"
 documentation: "Documentation"
+programming-patterns : "Programming Patterns"
+reading-note: "Reading Note"
 
 # Reading
 minRead: "min read"
