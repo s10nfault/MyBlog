@@ -96,10 +96,10 @@
     <path d="M2 3.75A1.75 1.75 0 0 1 3.75 2h8.5A1.75 1.75 0 0 1 14 3.75v8.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25Zm1.5 0a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Zm1.75 2a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Zm0 2.5a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Zm0 2.5a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H6a.75.75 0 0 1-.75-.75Z" fill="currentColor"/>
   </svg><span>Original</span></span></div><div class="d-flex flex-items-center color-fg-muted f5 mb-3"><time datetime="2026-07-02T19:37:28&#43;08:00">
         2026-07-02
-      </time><span class="mx-2">&middot;</span><span>1 min read</span></div><div class="d-flex flex-wrap mb-3" style="gap: 0.5rem;"><a href="/en/tags/programming-patterns/" class="topic-tag">Programming Patterns</a></div></header>
+      </time><span class="mx-2">&middot;</span><span>3 min read</span></div><div class="d-flex flex-wrap mb-3" style="gap: 0.5rem;"><a href="/en/tags/programming-patterns/" class="topic-tag">Programming Patterns</a></div></header>
 
   <div class="markdown-body">
-    <p>Building a bridge between inputs and methods to decouple with them is the core feature of command pattern.</p>
+    <p>Building a bridge between inputs and actions to decouple with them is the core feature of command pattern.</p>
 <h2 id="1-the-real-life-problem">1. The real life problem</h2>
 <p>When creating a player-controller character, we always face the problem of how to bind user inputs and character actions.</p>
 <p>At first glance, this might not even seem like a problem. We can easily handel it using simple <code>if</code> statements.</p>
@@ -130,12 +130,71 @@
 <blockquote>
   <p>While C-like languages use <code>struct</code> or <code>class</code> for similar purposes, a C# <code>record</code> is <strong>immutable</strong> by default. This means it cannot be modified after creation; we must create a new instance if we want to change the keybindings.</p>
 
-</blockquote><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="C#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">record</span> <span class="nc">GameConfig</span> <span class="p">(</span>
+</blockquote><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="C#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">record</span> <span class="nc">KeyConfig</span> <span class="p">(</span>
 </span></span><span class="line"><span class="cl">    <span class="n">KeyCode</span> <span class="n">MoveUp</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">KeyCode</span> <span class="n">MoveLeft</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">KeyCode</span> <span class="n">MoveRight</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">KeyCode</span> <span class="n">MoveDown</span>
-</span></span><span class="line"><span class="cl"><span class="p">);</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl"><span class="p">);</span></span></span></code></pre></div><p>And we can use it to refact the <code>Hero.Move()</code> method.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="C#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Hero</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//Some properties...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Move</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyConfig</span><span class="p">.</span><span class="n">MoveUp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_position</span> <span class="p">+=</span> <span class="n">Vector2d</span><span class="p">.</span><span class="n">Up</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyConfig</span><span class="p">.</span><span class="n">MoveLeft</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_position</span> <span class="p">+=</span> <span class="n">Vector2d</span><span class="p">.</span><span class="n">Left</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyConfig</span><span class="p">.</span><span class="n">MoveRight</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_position</span> <span class="p">+=</span> <span class="n">Vector2d</span><span class="p">.</span><span class="n">Right</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyConfig</span><span class="p">.</span><span class="n">MoveDown</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_position</span> <span class="p">+=</span> <span class="n">Vector2d</span><span class="p">.</span><span class="n">Down</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//Some Methods...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><p>But a competed game is not only a few keybindings, but also has keybingdings such as hero&rsquo;s skill, UI controller, or multiple controll support.</p>
+<p>[A picture to show how fragmentary it is.]</p>
+<p>They made the programing structure to become fragmentation and inputs and actions couple together.</p>
+<p>We actually don&rsquo;t want that happle, so we introduce the <strong>Command Pattern</strong>.</p>
+<h2 id="2-the-command-pattern">2. The Command Pattern</h2>
+<p>The core idea of Command pattern is turing command to a object. When the player press the button, the <code>Hero.Move()</code> doesn&rsquo;t get the message. Instead, it use a specific class to action by the input. And to action, it wraped the action by the class <code>Command</code>.</p>
+<p>At first, we create the base class <code>Command</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="k">class</span> <span class="nc">Command</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">abstract</span> <span class="k">void</span> <span class="n">excute</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><p>And, We design the subclass of <code>Command</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="k">class</span> <span class="nc">HeroMoveUpCommand</span> <span class="p">:</span> <span class="n">Command</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">excute</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Hero</span><span class="p">.</span><span class="n">Position</span> <span class="p">+=</span> <span class="n">Vector2d</span><span class="p">.</span><span class="n">UP</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><blockquote>
+  <p>Here, the <code>Vector2d Position</code> became a <code>Property</code>, a C# spcial way to define a class member. It can provide a convinent way or a sweet to creat a setter and getter easily by the statement <code>{get; set;}</code> behind the declaration.</p>
+
+</blockquote><p>We creat a class <code>HandelInput</code>, to handel the input and invoke the actions.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="c#"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">HandelInput</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Action</span> <span class="n">_heroMoveUp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Action</span> <span class="n">_heroMoveLeft</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Action</span> <span class="n">_heroMoveRight</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Action</span> <span class="n">_heroMoveDown</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//Some Actions...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyConfig</span><span class="p">.</span><span class="n">MoveUp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_heroMoveUp</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyConfig</span><span class="p">.</span><span class="n">MoveLeft</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_heroMoveLeft</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyConfig</span><span class="p">.</span><span class="n">MoveRight</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_position</span> <span class="p">+=</span> <span class="n">Vector2d</span><span class="p">.</span><span class="n">Right</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyConfig</span><span class="p">.</span><span class="n">MoveDown</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_position</span> <span class="p">+=</span> <span class="n">Vector2d</span><span class="p">.</span><span class="n">Down</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><h2 id="c">C#</h2>
+<p>Instead, We can use <code>Action</code>, a C# runtime defined <code>Delegate</code> used to action a specified behave without return, to build a <em>tunnel</em> between input and actions.</p>
+
   </div><div class="post-notice post-notice-subtle post-notice-original mt-4 f6">
   <p class="mb-0">
     <a href="http://localhost:1313/en/posts/programming-pattern/command-pattern/">Command Pattern</a>
