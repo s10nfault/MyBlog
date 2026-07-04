@@ -9,12 +9,12 @@ categories = ["reading-note"]
 description = 'Learn how to use or fix problem with command pattern!'
 +++
 
-Building a bridge between inputs and actions to decouple with them is the core feature of command pattern.
+Building a bridge between inputs and actions to decouple them is the core feature of the Command Pattern.
 
 ## 1. The real life problem
-When creating a player-controller character, we always face the problem of how to bind user inputs and character actions.
+When creating a player-controlled character, we always face the problem of how to bind user inputs to character actions.
 
-At first glance, this might not even seem like a problem. We can easily handel it using simple `if` statements.
+At first glance, this might not even seem like a problem. We can easily handle it using simple `if` statements.
 
 ```c#
 public class Hero {
@@ -42,7 +42,7 @@ public class Hero {
 }
 ```
 
-However, as players, we are often annoyed by bad default keybindings in other games.Therefore, as developers, we must supoort custom key configurations.
+However, as players, we are often annoyed by bad default keybindings in other games.Therefore, as developers, we must support custom key configurations.
 
 To store these configurations, we might use a `record` in C#.
 
@@ -57,7 +57,7 @@ public record KeyConfig (
 );
 ```
 
-And we can use it to refact the `Hero.Move()` method.
+And we can use it to refactor the `Hero.Move()` method.
 
 ```C#
 public class Hero {
@@ -78,19 +78,19 @@ public class Hero {
 }
 ```
 
-But a competed game is not only a few keybindings, but also has keybingdings such as hero's skill, UI controller, or multiple controll support.
+But a completed game involves more than just a few movement keys; it also includes hero skill, UI controls, or support for multiple input devices.
 
 [A picture to show how fragmentary it is.]
 
-They made the programing structure to become fragmentation and inputs and actions couple together.
+They make the programming structure fragmented and tightly couple inputs and actions.
 
-We actually don't want that happle, so we introduce the **Command Pattern**.
+We actually don't want that happen, so we introduce the **Command Pattern**.
 
 ## 2. The Command Pattern
 
-The core idea of Command pattern is turing command to a object. When the player press the button, the `Hero.Move()` doesn't get the message. Instead, it use a specific class to action by the input. And to action, it wraped the action by the class `Command`.
+The core idea of Command pattern is turning command into an object. When the player presses the button, the `Hero.Move()` doesn't get the message. Instead, it uses a specific class to handle the action based on the input. It wraps the action inside  a `Command` class.
 
-At first, we create the base class `Command`:
+First, we create the base class `Command`:
 
 ``` c#
 public abstract class Command {
@@ -112,10 +112,10 @@ public abstract class HeroMoveUpCommand : Command {
 }
 
 ```
-> Here, the `Vector2d Position` became a `Property`, a C# spcial way to define a class member. It can provide a convinent way or a sweet to creat a setter and getter easily by the statement `{get; set;}` behind the declaration.
+> Here, the `Vector2d Position` becames a `Property`, a C# special way to define a class member. It can provide a convenient way(or syntactic sugar) to easily creat a setter and getter using `{get; set;}` after the declaration.
 
 
-We creat a class `HandelInput`, to handel the input and invoke the actions.
+We create a class `InputHandler`, to handle the input and invoke the actions.
 
 ```c#
 class HandelInput {
@@ -141,4 +141,4 @@ class HandelInput {
 ```
 
 ## C#
-Instead, We can use `Action`, a C# runtime defined `Delegate` used to action a specified behave without return, to build a *tunnel* between input and actions.
+Instead, we can use `Action`, a C# built-in `Delegate` used to encapsulate a specific behavior that returns no value, to build a *tunnel* between input and actions.
