@@ -95,27 +95,110 @@ First, we create the base class `Command`:
 ``` c#
 public abstract class Command {
     
-    public abstract void excute();
+    public abstract void excute(GameActor actor);
 
 }
 ```
 
-And, We design the subclass of `Command`:
+Then, We design the subclass of `Command`:
 
 ```c#
-public abstract class HeroMoveUpCommand : Command {
+public abstract class MoveUpCommand : Command {
 
-    public void excute {
-        Hero.Position += Vector2d.UP;
+    public void excute(GameActor actor) {
+        actor.Move(Vector2d.UP);
     }
 
 }
 
 ```
-> Here, the `Vector2d Position` becames a `Property`, a C# special way to define a class member. It can provide a convenient way(or syntactic sugar) to easily creat a setter and getter using `{get; set;}` after the declaration.
+> Here, We use the `GameActor` instead of `Hero` , because it can decouple the `Command` and the `Hero`. Furthermore, it even support multiple player, or animy controlled by AI.
+
+Here is the fixed version of `Hero`, and the `GameActor`:
+
+```c#
+public abstract class GameObject {
+
+    private float Speed {get; protected set;}
+    private Vector2d Position {get; protected set;}
+
+    protected GameObject(float speed, Vector2d position) {
+        Speed = speed;
+        Position = position;
+    }
+
+    //In a real game engine, there will have more features than this simple one.
+
+}
 
 
-We create a class `InputHandler`, to handle the input and invoke the actions.
+public class Hero : GameObject {
+    
+    public Hero(float speed, Vector2d position) : base(speed, position);
+
+    private GameActor Actor {get; set;} = new(self);
+
+}
+
+public class GameActor {
+
+    private GameObject _target;
+
+    public GameActor(GameObject target) {
+        _target = target;
+    }
+
+    public void Move(Vector2d direction) {
+        _target.Position += direction.normalized() * _target.Speed;
+    }
+
+}
+
+```
+> To make programming easier, we define an abstract class `GameObject`, witch is the base class of all "**GameObject**" and have some basic game components usually used. 
+
+
+We create a class `InputHandler`, to handle the input and return the command. It's the **bridge** of the Command Pattern.
+
+```c#
+class InputHandler {
+
+    private Command _moveUp;
+    private Command _moveLeft;
+    private Command _moveRight;
+    private Command _moveDown;
+    //Some Actions...
+
+    public InputHandler(...) {
+        //Init all properities...
+    }
+
+    public Command HandleInput() {
+        if (Input.GetKeyDown(KeyConfig.MoveUp))
+            return _moveUp;
+        if (Input.GetKeyDown(KeyConfig.MoveLeft))
+            return _moveLeft;
+        if (Input.GetKeyDown(KeyConfig.MoveRight))
+            return _moveRight;
+        if (Input.GetKeyDown(KeyConfig.MoveDown))
+            return _moveDown;
+        return null;
+    }
+
+}
+```
+> [!NOTE] There is using `null` for **No Operation**.
+
+Finally, we need some code to make `Hero` moving:
+```c#
+Command command = inputHandler.HandleInput();
+command?.excute()
+```
+
+>[!CAUTION] Don't forget to check if `Command` is null before using it!
+
+## C#
+Instead, we can use `Action`, a C# built-in `Delegate` used to encapsulate a specific behavior that returns no value, to build a *tunnel* between input and actions.
 
 ```c#
 class HandelInput {
@@ -139,6 +222,3 @@ class HandelInput {
 
 }
 ```
-
-## C#
-Instead, we can use `Action`, a C# built-in `Delegate` used to encapsulate a specific behavior that returns no value, to build a *tunnel* between input and actions.
