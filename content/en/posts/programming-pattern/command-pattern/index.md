@@ -191,7 +191,8 @@ class InputHandler {
 
 }
 ```
-> [!NOTE] There is using `null` to represent **No Operation**.
+> [!NOTE] 
+> There is using `null` to represent **No Operation**.
 
 Finally, we need some code to make `Hero` moving:
 
@@ -200,7 +201,8 @@ Command command = inputHandler.HandleInput();
 command?.Execute(_hero.Actor);
 ```
 
->[!CAUTION] Don't forget to check if `Command` is null before using it!
+>[!CAUTION] 
+> Don't forget to check if `Command` is null before using it!
 
 >[!TIP]
 > This blog is a **reading note** summarized from [Game Programming Pattern](https://gameprogrammingpatterns.com/command.html). You can get more interesting examples and explanations of the Command Pattern from it!
