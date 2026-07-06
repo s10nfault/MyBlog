@@ -1,12 +1,13 @@
 +++
-date = '2026-07-02T19:37:28+08:00'
-draft = true
+date = '2026-07-06'
+draft = false
 title = 'Command Pattern'
 contentType = 'original'
-tags = ["programming-patterns"]
+tags = ["programming-patterns", "c-sharp"]
 archives = ["2026-07"]
 categories = ["reading-note"]
 description = 'Learn how to use or fix problem with command pattern!'
+image = "command-pattern.png"
 +++
 
 Building a bridge between inputs and actions to decouple them is the core feature of the Command Pattern.
@@ -42,7 +43,7 @@ public class Hero {
 }
 ```
 
-However, as players, we are often annoyed by bad default keybindings in other games.Therefore, as developers, we must support custom key configurations.
+However, as players, we are often annoyed by bad default keybindings in other games. Therefore, as developers, we must support custom key configurations.
 
 To store these configurations, we might use a `record` in C#.
 
@@ -78,24 +79,24 @@ public class Hero {
 }
 ```
 
-But a completed game involves more than just a few movement keys; it also includes hero skill, UI controls, or support for multiple input devices.
+But a completed game involves more than just a few movement keys; it also includes hero skills, UI controls, or support for multiple input devices.
 
-[A picture to show how fragmentary it is.]
+![A picture to show how fragmented it is.](Note.png)
 
 They make the programming structure fragmented and tightly couple inputs and actions.
 
-We actually don't want that happen, so we introduce the **Command Pattern**.
+We actually don't want that to happen, so we introduce the **Command Pattern**.
 
 ## 2. The Command Pattern
 
-The core idea of Command pattern is turning command into an object. When the player presses the button, the `Hero.Move()` doesn't get the message. Instead, it uses a specific class to handle the action based on the input. It wraps the action inside  a `Command` class.
+The core idea of Command pattern is turning a command into an object. When the player presses the button, the `Hero.Move()` doesn't get the message. Instead, it uses a specific class to handle the action based on the input. It wraps the action inside  a `Command` class.
 
 First, we create the base class `Command`:
 
 ``` c#
 public abstract class Command {
     
-    public abstract void excute(GameActor actor);
+    public abstract void Execute(GameActor actor);
 
 }
 ```
@@ -103,24 +104,24 @@ public abstract class Command {
 Then, We design the subclass of `Command`:
 
 ```c#
-public abstract class MoveUpCommand : Command {
+public class MoveUpCommand : Command {
 
-    public void excute(GameActor actor) {
+    public override void Execute(GameActor actor)) {
         actor.Move(Vector2d.UP);
     }
 
 }
 
 ```
-> Here, We use the `GameActor` instead of `Hero` , because it can decouple the `Command` and the `Hero`. Furthermore, it even support multiple player, or animy controlled by AI.
+> Here, We use the `GameActor` instead of `Hero` , because it can decouple the `Command` and the `Hero`. Furthermore, it even supports multiple players, or enemies controlled by AI.
 
 Here is the fixed version of `Hero`, and the `GameActor`:
 
 ```c#
 public abstract class GameObject {
 
-    private float Speed {get; protected set;}
-    private Vector2d Position {get; protected set;}
+    public float Speed { get; protected set; }
+    private Vector2d Position {get; set;}
 
     protected GameObject(float speed, Vector2d position) {
         Speed = speed;
@@ -134,9 +135,12 @@ public abstract class GameObject {
 
 public class Hero : GameObject {
     
-    public Hero(float speed, Vector2d position) : base(speed, position);
+    public Hero(float speed, Vector2d position) : base(speed, position)
+    {
+        Actor = new(this);
+    }
 
-    private GameActor Actor {get; set;} = new(self);
+    public GameActor Actor { get; private set; }
 
 }
 
@@ -155,7 +159,7 @@ public class GameActor {
 }
 
 ```
-> To make programming easier, we define an abstract class `GameObject`, witch is the base class of all "**GameObject**" and have some basic game components usually used. 
+> To make programming easier, we define an abstract class `GameObject`, which is the base class of all "**GameObject**" and has some basic game components usually used. 
 
 
 We create a class `InputHandler`, to handle the input and return the command. It's the **bridge** of the Command Pattern.
@@ -163,45 +167,53 @@ We create a class `InputHandler`, to handle the input and return the command. It
 ```c#
 class InputHandler {
 
+    private KeyConfig _config;
+
     private Command _moveUp;
     private Command _moveLeft;
     private Command _moveRight;
     private Command _moveDown;
     //Some Actions...
 
-    public InputHandler(...) {
-        //Init all properities...
-    }
+    ublic InputHandler(KeyConfig config) { _config = config; }
 
     public Command HandleInput() {
-        if (Input.GetKeyDown(KeyConfig.MoveUp))
+        if (Input.GetKeyDown(_config.MoveUp))
             return _moveUp;
-        if (Input.GetKeyDown(KeyConfig.MoveLeft))
+        if (Input.GetKeyDown(_config.MoveLeft))
             return _moveLeft;
-        if (Input.GetKeyDown(KeyConfig.MoveRight))
+        if (Input.GetKeyDown(_config.MoveRight))
             return _moveRight;
-        if (Input.GetKeyDown(KeyConfig.MoveDown))
+        if (Input.GetKeyDown(_config.MoveDown))
             return _moveDown;
         return null;
     }
 
 }
 ```
-> [!NOTE] There is using `null` for **No Operation**.
+> [!NOTE] There is using `null` to represent **No Operation**.
 
 Finally, we need some code to make `Hero` moving:
+
 ```c#
 Command command = inputHandler.HandleInput();
-command?.excute()
+command?.Execute(_hero.Actor);
 ```
 
 >[!CAUTION] Don't forget to check if `Command` is null before using it!
 
-## C#
+>[!TIP]
+> This blog is a **reading note** summarized from [Game Programming Pattern](https://gameprogrammingpatterns.com/command.html). You can get more interesting examples and explanations of the Command Pattern from it!
+
+## 3.Using `Action` as an Alternative
+If you are familiar with C#, you might notice that there is a feature that can replace this easily.
+
+It's `Action`!
+
 Instead, we can use `Action`, a C# built-in `Delegate` used to encapsulate a specific behavior that returns no value, to build a *tunnel* between input and actions.
 
 ```c#
-class HandelInput {
+class InputHandler {
 
     private Action _heroMoveUp;
     private Action _heroMoveLeft;
@@ -215,9 +227,9 @@ class HandelInput {
         if (Input.GetKeyDown(KeyConfig.MoveLeft))
             _heroMoveLeft();
         if (Input.GetKeyDown(KeyConfig.MoveRight))
-            _position += Vector2d.Right;
+            _heroMoveRight();
         if (Input.GetKeyDown(KeyConfig.MoveDown))
-            _position += Vector2d.Down;
+            _heroMoveDown();
     }
 
 }

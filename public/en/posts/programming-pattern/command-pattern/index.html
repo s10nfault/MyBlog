@@ -4,10 +4,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Command Pattern | q1w264&#39;s Blog</title><meta name="description" content="Learn how to use or fix problem with command pattern!"><meta name="author" content="q1w264"><meta property="og:title" content="Command Pattern"><meta property="og:description" content="Learn how to use or fix problem with command pattern!"><meta property="og:type" content="article"><meta property="og:url" content="http://localhost:1313/en/posts/programming-pattern/command-pattern/"><meta property="og:site_name" content="q1w264&#39;s Blog"><meta property="og:locale" content="en">
-<meta name="twitter:card" content="summary">
+<title>Command Pattern | q1w264&#39;s Blog</title><meta name="description" content="Learn how to use or fix problem with command pattern!"><meta name="author" content="q1w264"><meta property="og:title" content="Command Pattern"><meta property="og:description" content="Learn how to use or fix problem with command pattern!"><meta property="og:type" content="article"><meta property="og:url" content="http://localhost:1313/en/posts/programming-pattern/command-pattern/"><meta property="og:image" content="http://localhost:1313/en/posts/programming-pattern/command-pattern/command-pattern.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630"><meta property="og:site_name" content="q1w264&#39;s Blog"><meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Command Pattern">
-<meta name="twitter:description" content="Learn how to use or fix problem with command pattern!">
+<meta name="twitter:description" content="Learn how to use or fix problem with command pattern!"><meta name="twitter:image" content="http://localhost:1313/en/posts/programming-pattern/command-pattern/command-pattern.png">
 <link rel="canonical" href="http://localhost:1313/en/posts/programming-pattern/command-pattern/">
 
 <link rel="stylesheet" href="/css/primer.min.c12daf26af408c64f29cc993dd5ab422334e71e50fa7198111b729fdf674e34d.css" integrity="sha256-wS2vJq9AjGTynMmT3Vq0IjNOceUPpxmBEbcp/fZ0400=">
@@ -94,9 +96,9 @@
   <header class="mb-4">
     <h1 class="f1 lh-condensed mb-1">Command Pattern</h1><div class="post-type-badge-hero-wrap"><span class="post-type-badge post-type-badge-solid post-type-badge-hero post-type-badge-original"><svg class="post-type-badge-icon" viewBox="0 0 16 16" aria-hidden="true">
     <path d="M2 3.75A1.75 1.75 0 0 1 3.75 2h8.5A1.75 1.75 0 0 1 14 3.75v8.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25Zm1.5 0a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Zm1.75 2a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Zm0 2.5a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Zm0 2.5a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H6a.75.75 0 0 1-.75-.75Z" fill="currentColor"/>
-  </svg><span>Original</span></span></div><div class="d-flex flex-items-center color-fg-muted f5 mb-3"><time datetime="2026-07-02T19:37:28&#43;08:00">
-        2026-07-02
-      </time><span class="mx-2">&middot;</span><span>4 min read</span></div><div class="d-flex flex-wrap mb-3" style="gap: 0.5rem;"><a href="/en/tags/programming-patterns/" class="topic-tag">Programming Patterns</a></div></header>
+  </svg><span>Original</span></span></div><div class="d-flex flex-items-center color-fg-muted f5 mb-3"><time datetime="2026-07-06T00:00:00Z">
+        2026-07-06
+      </time><span class="mx-2">&middot;</span><span>4 min read</span></div><div class="d-flex flex-wrap mb-3" style="gap: 0.5rem;"><a href="/en/tags/programming-patterns/" class="topic-tag">Programming Patterns</a><a href="/en/tags/c-sharp/" class="topic-tag">C#</a></div><img src="/en/posts/programming-pattern/command-pattern/command-pattern.png" alt="Command Pattern" loading="lazy" class="rounded-2 width-full mb-3" style="max-height: 400px; object-fit: cover;"></header>
 
   <div class="markdown-body">
     <p>Building a bridge between inputs and actions to decouple them is the core feature of the Command Pattern.</p>
@@ -125,7 +127,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//Some Methods...</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><p>However, as players, we are often annoyed by bad default keybindings in other games.Therefore, as developers, we must support custom key configurations.</p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><p>However, as players, we are often annoyed by bad default keybindings in other games. Therefore, as developers, we must support custom key configurations.</p>
 <p>To store these configurations, we might use a <code>record</code> in C#.</p>
 <blockquote>
   <p>While C-like languages use <code>struct</code> or <code>class</code> for similar purposes, a C# <code>record</code> is <strong>immutable</strong> by default. This means it cannot be modified after creation; we must create a new instance if we want to change the keybindings.</p>
@@ -151,32 +153,33 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">//Some Methods...</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><p>But a completed game involves more than just a few movement keys; it also includes hero skill, UI controls, or support for multiple input devices.</p>
-<p>[A picture to show how fragmentary it is.]</p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><p>But a completed game involves more than just a few movement keys; it also includes hero skills, UI controls, or support for multiple input devices.</p>
+<p><img src="/en/posts/programming-pattern/command-pattern/Note.png" alt="A picture to show how fragmented it is." loading="lazy">
+</p>
 <p>They make the programming structure fragmented and tightly couple inputs and actions.</p>
-<p>We actually don&rsquo;t want that happen, so we introduce the <strong>Command Pattern</strong>.</p>
+<p>We actually don&rsquo;t want that to happen, so we introduce the <strong>Command Pattern</strong>.</p>
 <h2 id="2-the-command-pattern">2. The Command Pattern</h2>
-<p>The core idea of Command pattern is turning command into an object. When the player presses the button, the <code>Hero.Move()</code> doesn&rsquo;t get the message. Instead, it uses a specific class to handle the action based on the input. It wraps the action inside  a <code>Command</code> class.</p>
+<p>The core idea of Command pattern is turning a command into an object. When the player presses the button, the <code>Hero.Move()</code> doesn&rsquo;t get the message. Instead, it uses a specific class to handle the action based on the input. It wraps the action inside  a <code>Command</code> class.</p>
 <p>First, we create the base class <code>Command</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="k">class</span> <span class="nc">Command</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">abstract</span> <span class="k">void</span> <span class="n">excute</span><span class="p">(</span><span class="n">GameActor</span> <span class="n">actor</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">abstract</span> <span class="k">void</span> <span class="n">Execute</span><span class="p">(</span><span class="n">GameActor</span> <span class="n">actor</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><p>Then, We design the subclass of <code>Command</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="k">class</span> <span class="nc">MoveUpCommand</span> <span class="p">:</span> <span class="n">Command</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">MoveUpCommand</span> <span class="p">:</span> <span class="n">Command</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">excute</span><span class="p">(</span><span class="n">GameActor</span> <span class="n">actor</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Execute</span><span class="p">(</span><span class="n">GameActor</span> <span class="n">actor</span><span class="p">))</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">actor</span><span class="p">.</span><span class="n">Move</span><span class="p">(</span><span class="n">Vector2d</span><span class="p">.</span><span class="n">UP</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><blockquote>
-  <p>Here, We use the <code>GameActor</code> instead of <code>Hero</code> , because it can decouple the <code>Command</code> and the <code>Hero</code>. Furthermore, it even support multiple player, or animy controlled by AI.</p>
+  <p>Here, We use the <code>GameActor</code> instead of <code>Hero</code> , because it can decouple the <code>Command</code> and the <code>Hero</code>. Furthermore, it even supports multiple players, or enemies controlled by AI.</p>
 
 </blockquote><p>Here is the fixed version of <code>Hero</code>, and the <code>GameActor</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="k">class</span> <span class="nc">GameObject</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">float</span> <span class="n">Speed</span> <span class="p">{</span><span class="k">get</span><span class="p">;</span> <span class="kd">protected</span> <span class="k">set</span><span class="p">;}</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Vector2d</span> <span class="n">Position</span> <span class="p">{</span><span class="k">get</span><span class="p">;</span> <span class="kd">protected</span> <span class="k">set</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">float</span> <span class="n">Speed</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="kd">protected</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Vector2d</span> <span class="n">Position</span> <span class="p">{</span><span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="n">GameObject</span><span class="p">(</span><span class="kt">float</span> <span class="n">speed</span><span class="p">,</span> <span class="n">Vector2d</span> <span class="n">position</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">Speed</span> <span class="p">=</span> <span class="n">speed</span><span class="p">;</span>
@@ -190,9 +193,12 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Hero</span> <span class="p">:</span> <span class="n">GameObject</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Hero</span><span class="p">(</span><span class="kt">float</span> <span class="n">speed</span><span class="p">,</span> <span class="n">Vector2d</span> <span class="n">position</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span> <span class="n">position</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Hero</span><span class="p">(</span><span class="kt">float</span> <span class="n">speed</span><span class="p">,</span> <span class="n">Vector2d</span> <span class="n">position</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Actor</span> <span class="p">=</span> <span class="k">new</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">GameActor</span> <span class="n">Actor</span> <span class="p">{</span><span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;}</span> <span class="p">=</span> <span class="k">new</span><span class="p">(</span><span class="n">self</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">GameActor</span> <span class="n">Actor</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="kd">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
@@ -209,10 +215,12 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><blockquote>
-  <p>To make programming easier, we define an abstract class <code>GameObject</code>, witch is the base class of all &ldquo;<strong>GameObject</strong>&rdquo; and have some basic game components usually used.</p>
+  <p>To make programming easier, we define an abstract class <code>GameObject</code>, which is the base class of all &ldquo;<strong>GameObject</strong>&rdquo; and has some basic game components usually used.</p>
 
 </blockquote><p>We create a class <code>InputHandler</code>, to handle the input and return the command. It&rsquo;s the <strong>bridge</strong> of the Command Pattern.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="c#"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">InputHandler</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">KeyConfig</span> <span class="n">_config</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Command</span> <span class="n">_moveUp</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Command</span> <span class="n">_moveLeft</span><span class="p">;</span>
@@ -220,33 +228,36 @@
 </span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Command</span> <span class="n">_moveDown</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">//Some Actions...</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">InputHandler</span><span class="p">(...)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">//Init all properities...</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ublic</span> <span class="n">InputHandler</span><span class="p">(</span><span class="n">KeyConfig</span> <span class="n">config</span><span class="p">)</span> <span class="p">{</span> <span class="n">_config</span> <span class="p">=</span> <span class="n">config</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Command</span> <span class="n">HandleInput</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyConfig</span><span class="p">.</span><span class="n">MoveUp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">_config</span><span class="p">.</span><span class="n">MoveUp</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">_moveUp</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyConfig</span><span class="p">.</span><span class="n">MoveLeft</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">_config</span><span class="p">.</span><span class="n">MoveLeft</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">_moveLeft</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyConfig</span><span class="p">.</span><span class="n">MoveRight</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">_config</span><span class="p">.</span><span class="n">MoveRight</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">_moveRight</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyConfig</span><span class="p">.</span><span class="n">MoveDown</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">_config</span><span class="p">.</span><span class="n">MoveDown</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">_moveDown</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><blockquote class="markdown-alert markdown-alert-note">
-  <p class="markdown-alert-title"><svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="4.75" r=".9" fill="currentColor"/><path d="M8 7.25v4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>There is using <code>null</code> for <strong>No Operation</strong>.</p>
+  <p class="markdown-alert-title"><svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="4.75" r=".9" fill="currentColor"/><path d="M8 7.25v4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>There is using <code>null</code> to represent <strong>No Operation</strong>.</p>
   
 </blockquote><p>Finally, we need some code to make <code>Hero</code> moving:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="c#"><span class="line"><span class="cl"><span class="n">Command</span> <span class="n">command</span> <span class="p">=</span> <span class="n">inputHandler</span><span class="p">.</span><span class="n">HandleInput</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="n">command</span><span class="p">?.</span><span class="n">excute</span><span class="p">()</span></span></span></code></pre></div><blockquote class="markdown-alert markdown-alert-caution">
+</span></span><span class="line"><span class="cl"><span class="n">command</span><span class="p">?.</span><span class="n">Execute</span><span class="p">(</span><span class="n">_hero</span><span class="p">.</span><span class="n">Actor</span><span class="p">);</span></span></span></code></pre></div><blockquote class="markdown-alert markdown-alert-caution">
   <p class="markdown-alert-title"><svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 1.75h5l3.75 3.75v5l-3.75 3.75h-5L1.75 10.5v-5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 4.5v4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11.25" r=".9" fill="currentColor"/></svg>Don&rsquo;t forget to check if <code>Command</code> is null before using it!</p>
   
-</blockquote><h2 id="c">C#</h2>
+</blockquote><blockquote class="markdown-alert markdown-alert-tip">
+  <p class="markdown-alert-title"><svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.75a4.25 4.25 0 0 0-2.87 7.38c.45.4.85 1.09 1.05 1.87h3.64c.2-.78.6-1.47 1.05-1.87A4.25 4.25 0 0 0 8 1.75Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M6.25 12.25h3.5M6.75 14.25h2.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Tip</p>
+  <p>This blog is a <strong>reading note</strong> summarized from <a href="https://gameprogrammingpatterns.com/command.html">Game Programming Pattern</a>. You can get more interesting examples and explanations of the Command Pattern from it!</p>
+</blockquote><h2 id="3using-action-as-an-alternative">3.Using <code>Action</code> as an Alternative</h2>
+<p>If you are familiar with C#, you might notice that there is a feature that can replace this easily.</p>
+<p>It&rsquo;s <code>Action</code>!</p>
 <p>Instead, we can use <code>Action</code>, a C# built-in <code>Delegate</code> used to encapsulate a specific behavior that returns no value, to build a <em>tunnel</em> between input and actions.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="c#"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">HandelInput</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="c#"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">InputHandler</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Action</span> <span class="n">_heroMoveUp</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Action</span> <span class="n">_heroMoveLeft</span><span class="p">;</span>
@@ -260,9 +271,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyConfig</span><span class="p">.</span><span class="n">MoveLeft</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">            <span class="n">_heroMoveLeft</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyConfig</span><span class="p">.</span><span class="n">MoveRight</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">            <span class="n">_position</span> <span class="p">+=</span> <span class="n">Vector2d</span><span class="p">.</span><span class="n">Right</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_heroMoveRight</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyConfig</span><span class="p">.</span><span class="n">MoveDown</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">            <span class="n">_position</span> <span class="p">+=</span> <span class="n">Vector2d</span><span class="p">.</span><span class="n">Down</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_heroMoveDown</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
@@ -685,10 +696,6 @@
 </div><div class="color-bg-subtle rounded-2 p-3 mb-3">
   <h3 class="h5 mb-2">Categories</h3>
   <ul class="list-style-none"><li class="mb-1">
-      <a href="/en/categories/documentation/" class="Link--secondary">
-        Documentation <span class="Counter Counter--secondary ml-1">1</span>
-      </a>
-    </li><li class="mb-1">
       <a href="/en/categories/reading-note/" class="Link--secondary">
         Reading Note <span class="Counter Counter--secondary ml-1">1</span>
       </a>
@@ -701,13 +708,10 @@
   <h3 class="h5 mb-2">Recent Posts</h3>
   <ul class="list-style-none"><li class="mb-2">
       <a href="/en/posts/programming-pattern/command-pattern/" class="Link--primary">Command Pattern</a><span class="color-fg-muted f6 d-block">
-        2026-07-02
+        2026-07-06
       </span></li><li class="mb-2">
       <a href="/en/posts/getting-started-with-hugo/" class="Link--primary">Getting Started with Hugo</a><span class="color-fg-muted f6 d-block">
         2026-06-27
-      </span></li><li class="mb-2">
-      <a href="/en/posts/gfm-demo/" class="Link--primary">GitHub Flavored Markdown Demo</a><span class="color-fg-muted f6 d-block">
-        2024-01-20
       </span></li></ul>
 </div><div class="color-bg-subtle rounded-2 p-3 mb-3">
   <h3 class="h5 mb-2">
@@ -718,7 +722,7 @@
     data-view-all="/en/tags/"
     data-label-more="Show more"
     data-label-less="Show less"
-    data-label-view-all="View all"><a href="/en/tags/demo/" class="topic-tag">Demo</a><a href="/en/tags/gfm/" class="topic-tag">GFM</a><a href="/en/tags/hugo/" class="topic-tag">Hugo</a><a href="/en/tags/markdown/" class="topic-tag">Markdown</a><a href="/en/tags/programming-patterns/" class="topic-tag">Programming Patterns</a><a href="/en/tags/static-site/" class="topic-tag">Static Site</a></div>
+    data-label-view-all="View all"><a href="/en/tags/c-sharp/" class="topic-tag">C#</a><a href="/en/tags/hugo/" class="topic-tag">Hugo</a><a href="/en/tags/programming-patterns/" class="topic-tag">Programming Patterns</a><a href="/en/tags/static-site/" class="topic-tag">Static Site</a></div>
 </div></aside></div>
         </div></div>
     </main><footer class="site-footer border-top mt-6" role="contentinfo">
