@@ -17,6 +17,16 @@
   </url><url>
     <loc>http://localhost:1313/en/tags/c-sharp/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/tags/c-sharp/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/tags/c-sharp/"
+                />
   </url><url>
     <loc>http://localhost:1313/en/categories/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
@@ -33,6 +43,16 @@
   </url><url>
     <loc>http://localhost:1313/en/posts/programming-pattern/command-pattern/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/posts/programming-pattern/command-pattern/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/posts/programming-pattern/command-pattern/"
+                />
   </url><url>
     <loc>http://localhost:1313/en/posts/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
@@ -49,9 +69,29 @@
   </url><url>
     <loc>http://localhost:1313/en/tags/programming-patterns/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/tags/programming-patterns/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/tags/programming-patterns/"
+                />
   </url><url>
     <loc>http://localhost:1313/en/categories/reading-note/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/categories/reading-note/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/categories/reading-note/"
+                />
   </url><url>
     <loc>http://localhost:1313/en/tags/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
