@@ -10,7 +10,7 @@ description = 'Learn how to use or fix problem with flyweight pattern!'
 
 +++
 
-Making every properties used repeatly in every Instances to store them into a specific class, and they can use the properties without any additional memory allocated is the core idea of the **Flyweight Pattern**.
+Extracting shared properties and sharing them via a single object is the core idea of the **Flyweight Pattern**.
 
 ---
 
@@ -23,7 +23,7 @@ Making every properties used repeatly in every Instances to store them into a sp
 
 ## 1. Blocks in Sandbox Game
 
-Imagine you are developing a sandbox game that players can use blocks to build their own world.
+Imagine you are developing a sandbox game where players can use blocks to build their own world.
 
 Obviously, you need to define blocks in a **blocks' game**.
 
@@ -58,8 +58,6 @@ enum BlockType
     Hard
 }
 ```
-> [!NOTE]
-> In 2D games, there are usually using sprite, a big image stored every frames of character's motions, as a way to reduce calls or pre-loading. In this example, it as the repeat property in the `Block` class.
 
 Then, we implement the abstract class `Block` to several sub-classes.
 ``` C#
@@ -67,24 +65,12 @@ namespace Blocks;
 
 class GrassBlock : Block
 {
-    public GrassBlock()
-    {
-        var sprite = new GrassBlockSprite();
-        var type = BlockType.Soft;
-        var name = "Grass";
-        base.(sprite, type, name);
-    }
+    public GrassBlock() : base (new self(), BlockType.Soft, "Grass"){}
 }
 
 class DirtBlock : Block
 {
-    public DirtBlock()
-    {
-        var sprite = new DirtBlockSprite();
-        var type = BlockType.Soft;
-        var name = "Dirt";
-        base.(sprite, type, name);
-    }
+    public DirtBlock() : base (new self(), BlockType.Soft, "Dirt"){}
 }
 ```
 

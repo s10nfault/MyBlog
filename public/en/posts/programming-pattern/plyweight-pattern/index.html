@@ -96,10 +96,10 @@
     <path d="M2 3.75A1.75 1.75 0 0 1 3.75 2h8.5A1.75 1.75 0 0 1 14 3.75v8.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25Zm1.5 0a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Zm1.75 2a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Zm0 2.5a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Zm0 2.5a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H6a.75.75 0 0 1-.75-.75Z" fill="currentColor"/>
   </svg><span>Original</span></span></div><div class="d-flex flex-items-center color-fg-muted f5 mb-3"><time datetime="2026-07-07T00:00:00Z">
         2026-07-07
-      </time><span class="mx-2">&middot;</span><span>2 min read</span></div><div class="d-flex flex-wrap mb-3" style="gap: 0.5rem;"><a href="/en/tags/programming-patterns/" class="topic-tag">Programming Patterns</a><a href="/en/tags/c-sharp/" class="topic-tag">C#</a></div></header>
+      </time><span class="mx-2">&middot;</span><span>1 min read</span></div><div class="d-flex flex-wrap mb-3" style="gap: 0.5rem;"><a href="/en/tags/programming-patterns/" class="topic-tag">Programming Patterns</a><a href="/en/tags/c-sharp/" class="topic-tag">C#</a></div></header>
 
   <div class="markdown-body">
-    <p>Making every properties used repeatly in every Instances to store them into a specific class, and they can use the properties without any additional memory allocated is the core idea of the <strong>Flyweight Pattern</strong>.</p>
+    <p>Extracting shared properties and sharing them via a single object is the core idea of the <strong>Flyweight Pattern</strong>.</p>
 <hr>
 <blockquote class="markdown-alert markdown-alert-tip">
   <p class="markdown-alert-title"><svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.75a4.25 4.25 0 0 0-2.87 7.38c.45.4.85 1.09 1.05 1.87h3.64c.2-.78.6-1.47 1.05-1.87A4.25 4.25 0 0 0 8 1.75Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M6.25 12.25h3.5M6.75 14.25h2.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Tip</p>
@@ -110,7 +110,7 @@
 <li><a href="/en/posts/programming-pattern/plyweight-pattern/#2-the-flyweight-pattern">The Flyweight Pattern</a></li>
 </ol>
 <h2 id="1-blocks-in-sandbox-game">1. Blocks in Sandbox Game</h2>
-<p>Imagine you are developing a sandbox game that players can use blocks to build their own world.</p>
+<p>Imagine you are developing a sandbox game where players can use blocks to build their own world.</p>
 <p>Obviously, you need to define blocks in a <strong>blocks&rsquo; game</strong>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="c#"><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">Blocks</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -140,32 +140,17 @@
 </span></span><span class="line"><span class="cl">    <span class="n">Soft</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Median</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Hard</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><blockquote class="markdown-alert markdown-alert-note">
-  <p class="markdown-alert-title"><svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="4.75" r=".9" fill="currentColor"/><path d="M8 7.25v4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Note</p>
-  <p>In 2D games, there are usually using sprite, a big image stored every frames of character&rsquo;s motions, as a way to reduce calls or pre-loading. In this example, it as the repeat property in the <code>Block</code> class.</p>
-</blockquote><p>Then, we implement the abstract class <code>Block</code> to several sub-classes.</p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><p>Then, we implement the abstract class <code>Block</code> to several sub-classes.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="C#"><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">Blocks</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">GrassBlock</span> <span class="p">:</span> <span class="n">Block</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">GrassBlock</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">sprite</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GrassBlockSprite</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">type</span> <span class="p">=</span> <span class="n">BlockType</span><span class="p">.</span><span class="n">Soft</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">name</span> <span class="p">=</span> <span class="s">&#34;Grass&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">base</span><span class="p">.(</span><span class="n">sprite</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">GrassBlock</span><span class="p">()</span> <span class="p">:</span> <span class="k">base</span> <span class="p">(</span><span class="k">new</span> <span class="n">self</span><span class="p">(),</span> <span class="n">BlockType</span><span class="p">.</span><span class="n">Soft</span><span class="p">,</span> <span class="s">&#34;Grass&#34;</span><span class="p">){}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">DirtBlock</span> <span class="p">:</span> <span class="n">Block</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">DirtBlock</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">sprite</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DirtBlockSprite</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">type</span> <span class="p">=</span> <span class="n">BlockType</span><span class="p">.</span><span class="n">Soft</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">name</span> <span class="p">=</span> <span class="s">&#34;Dirt&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">base</span><span class="p">.(</span><span class="n">sprite</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">DirtBlock</span><span class="p">()</span> <span class="p">:</span> <span class="k">base</span> <span class="p">(</span><span class="k">new</span> <span class="n">self</span><span class="p">(),</span> <span class="n">BlockType</span><span class="p">.</span><span class="n">Soft</span><span class="p">,</span> <span class="s">&#34;Dirt&#34;</span><span class="p">){}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><h2 id="2-the-flyweight-pattern">2. The Flyweight Pattern</h2>
 
   </div><div class="post-notice post-notice-subtle post-notice-original mt-4 f6">
