@@ -7,7 +7,7 @@ tags = ["programming-patterns", "c-sharp"]
 archives = ["2026-07"]
 categories = ["reading-note"]
 description = 'Learn how to use or fix problem with flyweight pattern!'
-
+image = 'Flyweight-pattern.png'
 +++
 
 Extracting shared properties and sharing them via a single object is the core idea of the **Flyweight Pattern**.
