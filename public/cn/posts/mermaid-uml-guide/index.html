@@ -131,14 +131,14 @@
 </span></span><span class="line"><span class="cl">  F --&gt; G[渲染 SVG 图表]
 </span></span><span class="line"><span class="cl">  G --&gt; H[发布站点]
 </span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>效果：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">flowchart TD
+<div class="mermaid-codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">flowchart TD
 </span></span><span class="line"><span class="cl">  A[编辑 Markdown] --&gt; B[提交仓库]
 </span></span><span class="line"><span class="cl">  B --&gt; C[触发 Hugo 构建]
 </span></span><span class="line"><span class="cl">  C --&gt; D{是否包含 mermaid 代码块}
 </span></span><span class="line"><span class="cl">  D -- 否 --&gt; E[输出普通页面]
 </span></span><span class="line"><span class="cl">  D -- 是 --&gt; F[按需加载 Mermaid]
 </span></span><span class="line"><span class="cl">  F --&gt; G[渲染 SVG 图表]
-</span></span><span class="line"><span class="cl">  G --&gt; H[发布站点]</span></span></code></pre></div><h3 id="2-时序图页面请求链路">2. 时序图（页面请求链路）</h3>
+</span></span><span class="line"><span class="cl">  G --&gt; H[发布站点]</span></span></code></pre></div></div><h3 id="2-时序图页面请求链路">2. 时序图（页面请求链路）</h3>
 <p>代码：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
 </span></span></span><span class="line"><span class="cl">sequenceDiagram
@@ -152,7 +152,7 @@
 </span></span><span class="line"><span class="cl">  浏览器-&gt;&gt;浏览器: 初始化 Mermaid
 </span></span><span class="line"><span class="cl">  浏览器--&gt;&gt;用户: 渲染 UML 图
 </span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>效果：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">sequenceDiagram
+<div class="mermaid-codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">sequenceDiagram
 </span></span><span class="line"><span class="cl">  actor 用户
 </span></span><span class="line"><span class="cl">  participant 浏览器
 </span></span><span class="line"><span class="cl">  participant 博客站点
@@ -161,7 +161,7 @@
 </span></span><span class="line"><span class="cl">  浏览器-&gt;&gt;博客站点: 请求 HTML
 </span></span><span class="line"><span class="cl">  博客站点--&gt;&gt;浏览器: 返回包含 Mermaid 源码的页面
 </span></span><span class="line"><span class="cl">  浏览器-&gt;&gt;浏览器: 初始化 Mermaid
-</span></span><span class="line"><span class="cl">  浏览器--&gt;&gt;用户: 渲染 UML 图</span></span></code></pre></div><h3 id="3-类图对象职责">3. 类图（对象职责）</h3>
+</span></span><span class="line"><span class="cl">  浏览器--&gt;&gt;用户: 渲染 UML 图</span></span></code></pre></div></div><h3 id="3-类图对象职责">3. 类图（对象职责）</h3>
 <p>代码：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
 </span></span></span><span class="line"><span class="cl">classDiagram
@@ -189,7 +189,7 @@
 </span></span><span class="line"><span class="cl">博客站点 --&gt; 浏览器 : 返回Mermaid源码
 </span></span><span class="line"><span class="cl">浏览器 --&gt; Mermaid渲染器 : 初始化并渲染
 </span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>效果：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">classDiagram
+<div class="mermaid-codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">classDiagram
 </span></span><span class="line"><span class="cl">class 用户 {
 </span></span><span class="line"><span class="cl">  +打开文章页面(url)
 </span></span><span class="line"><span class="cl">}
@@ -212,7 +212,7 @@
 </span></span><span class="line"><span class="cl">用户 --&gt; 浏览器 : 打开文章页面
 </span></span><span class="line"><span class="cl">浏览器 --&gt; 博客站点 : 请求HTML
 </span></span><span class="line"><span class="cl">博客站点 --&gt; 浏览器 : 返回Mermaid源码
-</span></span><span class="line"><span class="cl">浏览器 --&gt; Mermaid渲染器 : 初始化并渲染</span></span></code></pre></div><h3 id="4-状态图渲染状态迁移">4. 状态图（渲染状态迁移）</h3>
+</span></span><span class="line"><span class="cl">浏览器 --&gt; Mermaid渲染器 : 初始化并渲染</span></span></code></pre></div></div><h3 id="4-状态图渲染状态迁移">4. 状态图（渲染状态迁移）</h3>
 <p>代码：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
 </span></span></span><span class="line"><span class="cl">stateDiagram-v2
@@ -223,13 +223,13 @@
 </span></span><span class="line"><span class="cl">  初始化Mermaid --&gt; 渲染UML图
 </span></span><span class="line"><span class="cl">  渲染UML图 --&gt; [*]
 </span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>效果：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">stateDiagram-v2
+<div class="mermaid-codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">stateDiagram-v2
 </span></span><span class="line"><span class="cl">  [*] --&gt; 打开文章页面
 </span></span><span class="line"><span class="cl">  打开文章页面 --&gt; 请求HTML
 </span></span><span class="line"><span class="cl">  请求HTML --&gt; 返回包含Mermaid源码的页面
 </span></span><span class="line"><span class="cl">  返回包含Mermaid源码的页面 --&gt; 初始化Mermaid
 </span></span><span class="line"><span class="cl">  初始化Mermaid --&gt; 渲染UML图
-</span></span><span class="line"><span class="cl">  渲染UML图 --&gt; [*]</span></span></code></pre></div><h3 id="5-甘特图项目排期">5. 甘特图（项目排期）</h3>
+</span></span><span class="line"><span class="cl">  渲染UML图 --&gt; [*]</span></span></code></pre></div></div><h3 id="5-甘特图项目排期">5. 甘特图（项目排期）</h3>
 <p>代码：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
 </span></span></span><span class="line"><span class="cl">gantt
@@ -243,7 +243,7 @@
 </span></span><span class="line"><span class="cl">  中英文页面校验     :         d3, 2026-07-12, 2026-07-13
 </span></span><span class="line"><span class="cl">  深浅色模式回归     :         d4, 2026-07-13, 2026-07-14
 </span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>效果：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">gantt
+<div class="mermaid-codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">gantt
 </span></span><span class="line"><span class="cl">  title Mermaid 接入计划
 </span></span><span class="line"><span class="cl">  dateFormat  YYYY-MM-DD
 </span></span><span class="line"><span class="cl">  axisFormat  %m-%d
@@ -252,7 +252,7 @@
 </span></span><span class="line"><span class="cl">  主题样式调优       :active,  d2, 2026-07-11, 2026-07-12
 </span></span><span class="line"><span class="cl">  section 验证
 </span></span><span class="line"><span class="cl">  中英文页面校验     :         d3, 2026-07-12, 2026-07-13
-</span></span><span class="line"><span class="cl">  深浅色模式回归     :         d4, 2026-07-13, 2026-07-14</span></span></code></pre></div><h3 id="6-饼图构成占比">6. 饼图（构成占比）</h3>
+</span></span><span class="line"><span class="cl">  深浅色模式回归     :         d4, 2026-07-13, 2026-07-14</span></span></code></pre></div></div><h3 id="6-饼图构成占比">6. 饼图（构成占比）</h3>
 <p>代码：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
 </span></span></span><span class="line"><span class="cl">pie title 本文图表示例分布
@@ -260,10 +260,10 @@
 </span></span><span class="line"><span class="cl">  &#34;类图与状态图&#34; : 35
 </span></span><span class="line"><span class="cl">  &#34;计划与统计&#34; : 30
 </span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>效果：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">pie title 本文图表示例分布
+<div class="mermaid-codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">pie title 本文图表示例分布
 </span></span><span class="line"><span class="cl">  &#34;流程与时序&#34; : 35
 </span></span><span class="line"><span class="cl">  &#34;类图与状态图&#34; : 35
-</span></span><span class="line"><span class="cl">  &#34;计划与统计&#34; : 30</span></span></code></pre></div><h2 id="写作建议">写作建议</h2>
+</span></span><span class="line"><span class="cl">  &#34;计划与统计&#34; : 30</span></span></code></pre></div></div><h2 id="写作建议">写作建议</h2>
 <ol>
 <li>每张图聚焦一个主题，尽量拆分为多张小图。</li>
 <li>技术文章优先使用英文标识符，便于和代码命名保持一致。</li>
@@ -741,5 +741,108 @@
     </div>
   </div>
 </footer>
-</div><script src="/js/theme-switcher.min.339cb8828f7501e328cd7310b6c9269028c2b0aa83d993dabdd165df045dc52e.js" integrity="sha256-M5y4go91AeMozXMQtskmkCjCsKqD2ZPavdFl3wRdxS4="></script><script src="/js/sidebar.min.8d897965d82e39784b4da02d345c06f44ecdff6252fcf44c20eeb421f1027114.js" integrity="sha256-jYl5ZdguOXhLTaAtNFwG9E7N/2JS/PRMIO60IfECcRQ="></script></body>
+</div><script src="/js/theme-switcher.min.339cb8828f7501e328cd7310b6c9269028c2b0aa83d993dabdd165df045dc52e.js" integrity="sha256-M5y4go91AeMozXMQtskmkCjCsKqD2ZPavdFl3wRdxS4="></script><script src="/js/sidebar.min.8d897965d82e39784b4da02d345c06f44ecdff6252fcf44c20eeb421f1027114.js" integrity="sha256-jYl5ZdguOXhLTaAtNFwG9E7N/2JS/PRMIO60IfECcRQ="></script><style>
+  .markdown-body .mermaid,
+  .markdown-body .mermaid svg {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  }
+
+  .markdown-body .mermaid {
+    margin: 1.25rem 0;
+    padding: 0.75rem;
+    border: 1px solid var(--borderColor-default, #d0d7de);
+    border-radius: 6px;
+    background: var(--bgColor-muted, #f6f8fa);
+    overflow-x: auto;
+  }
+
+  .markdown-body .mermaid svg {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .markdown-body .mermaid svg text.actor,
+  .markdown-body .mermaid svg .messageText,
+  .markdown-body .mermaid svg .label text {
+    fill: var(--fgColor-default, #24292f) !important;
+    color: var(--fgColor-default, #24292f) !important;
+  }
+
+  .markdown-body .mermaid svg .labelBkg,
+  .markdown-body .mermaid svg .edgeLabel rect {
+    fill: var(--bgColor-default, #ffffff) !important;
+    stroke: var(--borderColor-default, #d0d7de) !important;
+  }
+
+  .markdown-body .mermaid svg .sectionTitle,
+  .markdown-body .mermaid svg .titleText {
+    fill: var(--fgColor-default, #24292f) !important;
+    color: var(--fgColor-default, #24292f) !important;
+  }
+
+  html[data-color-mode="dark"] .markdown-body .mermaid {
+    background: var(--bgColor-neutral-muted, #161b22);
+    border-color: var(--borderColor-muted, #30363d);
+  }
+
+  html[data-color-mode="dark"] .markdown-body .mermaid :is(text, tspan, .messageText, .loopText, .noteText) {
+    fill: var(--fgColor-default, #e6edf3) !important;
+    color: var(--fgColor-default, #e6edf3) !important;
+  }
+
+  html[data-color-mode="dark"] .markdown-body .mermaid svg text.actor,
+  html[data-color-mode="dark"] .markdown-body .mermaid svg .messageText,
+  html[data-color-mode="dark"] .markdown-body .mermaid svg .label text {
+    fill: var(--fgColor-default, #e6edf3) !important;
+    color: var(--fgColor-default, #e6edf3) !important;
+  }
+
+  html[data-color-mode="dark"] .markdown-body .mermaid svg .labelBkg,
+  html[data-color-mode="dark"] .markdown-body .mermaid svg .edgeLabel rect {
+    fill: var(--bgColor-muted, #161b22) !important;
+    stroke: var(--borderColor-muted, #30363d) !important;
+  }
+
+  html[data-color-mode="dark"] .markdown-body .mermaid svg .sectionTitle,
+  html[data-color-mode="dark"] .markdown-body .mermaid svg .titleText {
+    fill: var(--fgColor-default, #e6edf3) !important;
+    color: var(--fgColor-default, #e6edf3) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html[data-color-mode="auto"] .markdown-body .mermaid {
+      background: var(--bgColor-neutral-muted, #161b22);
+      border-color: var(--borderColor-muted, #30363d);
+    }
+
+    html[data-color-mode="auto"] .markdown-body .mermaid :is(text, tspan, .messageText, .loopText, .noteText) {
+      fill: var(--fgColor-default, #e6edf3) !important;
+      color: var(--fgColor-default, #e6edf3) !important;
+    }
+
+    html[data-color-mode="auto"] .markdown-body .mermaid svg text.actor,
+    html[data-color-mode="auto"] .markdown-body .mermaid svg .messageText,
+    html[data-color-mode="auto"] .markdown-body .mermaid svg .label text {
+      fill: var(--fgColor-default, #e6edf3) !important;
+      color: var(--fgColor-default, #e6edf3) !important;
+    }
+
+    html[data-color-mode="auto"] .markdown-body .mermaid svg .labelBkg,
+    html[data-color-mode="auto"] .markdown-body .mermaid svg .edgeLabel rect {
+      fill: var(--bgColor-muted, #161b22) !important;
+      stroke: var(--borderColor-muted, #30363d) !important;
+    }
+
+    html[data-color-mode="auto"] .markdown-body .mermaid svg .sectionTitle,
+    html[data-color-mode="auto"] .markdown-body .mermaid svg .titleText {
+      fill: var(--fgColor-default, #e6edf3) !important;
+      color: var(--fgColor-default, #e6edf3) !important;
+    }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.10.1/dist/mermaid.min.js" defer></script>
+<script src="/js/mermaid-init.min.f397a84230a9874e4c8c77e4cdb64d43d973552a213a73e2bc080467f4931d18.js" integrity="sha256-85eoQjCph05MjHfkzbZNQ9lzVSohOnPivAgEZ/STHRg=" defer></script>
+</body>
 </html>

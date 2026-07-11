@@ -1,0 +1,18 @@
+{{- /*
+  Mermaid support: render ```mermaid blocks as graph containers and
+  mark the current page for conditional script loading in baseof.
+*/ -}}
+{{- $lang := lower .Type -}}
+{{- /*
+  Workaround: Remove class="language-*" from <code> elements to prevent
+  1Password browser extension from injecting Prism.js and overwriting
+  Hugo's Chroma syntax highlighting.
+*/ -}}
+{{- $highlighted := transform.HighlightCodeBlock . -}}
+{{- $wrapped := $highlighted.Wrapped | replaceRE `class="language-[^"]*" ` `` -}}
+{{- if or (eq $lang "mermaid") (eq $lang "mmd") -}}
+  {{- .Page.Store.Set "hasMermaid" true -}}
+  <div class="mermaid-codeblock">{{- $wrapped | safeHTML -}}</div>
+{{- else -}}
+  {{- $wrapped | safeHTML -}}
+{{- end -}}

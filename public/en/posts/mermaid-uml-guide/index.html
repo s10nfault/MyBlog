@@ -131,14 +131,14 @@
 </span></span><span class="line"><span class="cl">  F --&gt; G[Render SVG diagram]
 </span></span><span class="line"><span class="cl">  G --&gt; H[Publish site]
 </span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>Diagram:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">flowchart TD
+<div class="mermaid-codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">flowchart TD
 </span></span><span class="line"><span class="cl">  A[Edit Markdown] --&gt; B[Push to repository]
 </span></span><span class="line"><span class="cl">  B --&gt; C[Run Hugo build]
 </span></span><span class="line"><span class="cl">  C --&gt; D{Contains mermaid block?}
 </span></span><span class="line"><span class="cl">  D -- No --&gt; E[Render normal page]
 </span></span><span class="line"><span class="cl">  D -- Yes --&gt; F[Load Mermaid on demand]
 </span></span><span class="line"><span class="cl">  F --&gt; G[Render SVG diagram]
-</span></span><span class="line"><span class="cl">  G --&gt; H[Publish site]</span></span></code></pre></div><h3 id="2-sequence-diagram-request-lifecycle">2. Sequence Diagram (Request Lifecycle)</h3>
+</span></span><span class="line"><span class="cl">  G --&gt; H[Publish site]</span></span></code></pre></div></div><h3 id="2-sequence-diagram-request-lifecycle">2. Sequence Diagram (Request Lifecycle)</h3>
 <p>Code:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
 </span></span></span><span class="line"><span class="cl">sequenceDiagram
@@ -152,7 +152,7 @@
 </span></span><span class="line"><span class="cl">  Browser-&gt;&gt;Browser: Initialize Mermaid
 </span></span><span class="line"><span class="cl">  Browser--&gt;&gt;User: Render UML diagram
 </span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>Diagram:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">sequenceDiagram
+<div class="mermaid-codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">sequenceDiagram
 </span></span><span class="line"><span class="cl">  actor User
 </span></span><span class="line"><span class="cl">  participant Browser
 </span></span><span class="line"><span class="cl">  participant Blog
@@ -161,7 +161,7 @@
 </span></span><span class="line"><span class="cl">  Browser-&gt;&gt;Blog: Request HTML
 </span></span><span class="line"><span class="cl">  Blog--&gt;&gt;Browser: Return Mermaid source
 </span></span><span class="line"><span class="cl">  Browser-&gt;&gt;Browser: Initialize Mermaid
-</span></span><span class="line"><span class="cl">  Browser--&gt;&gt;User: Render UML diagram</span></span></code></pre></div><h3 id="3-class-diagram-responsibility-model">3. Class Diagram (Responsibility Model)</h3>
+</span></span><span class="line"><span class="cl">  Browser--&gt;&gt;User: Render UML diagram</span></span></code></pre></div></div><h3 id="3-class-diagram-responsibility-model">3. Class Diagram (Responsibility Model)</h3>
 <p>Code:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
 </span></span></span><span class="line"><span class="cl">classDiagram
@@ -189,7 +189,7 @@
 </span></span><span class="line"><span class="cl">Blog --&gt; Browser : Return Mermaid source
 </span></span><span class="line"><span class="cl">Browser --&gt; MermaidRenderer : Initialize and render
 </span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>Diagram:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">classDiagram
+<div class="mermaid-codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">classDiagram
 </span></span><span class="line"><span class="cl">class User {
 </span></span><span class="line"><span class="cl">  +openArticlePage(url)
 </span></span><span class="line"><span class="cl">}
@@ -212,7 +212,7 @@
 </span></span><span class="line"><span class="cl">User --&gt; Browser : Open article page
 </span></span><span class="line"><span class="cl">Browser --&gt; Blog : Request HTML
 </span></span><span class="line"><span class="cl">Blog --&gt; Browser : Return Mermaid source
-</span></span><span class="line"><span class="cl">Browser --&gt; MermaidRenderer : Initialize and render</span></span></code></pre></div><h3 id="4-state-diagram-render-state-transition">4. State Diagram (Render State Transition)</h3>
+</span></span><span class="line"><span class="cl">Browser --&gt; MermaidRenderer : Initialize and render</span></span></code></pre></div></div><h3 id="4-state-diagram-render-state-transition">4. State Diagram (Render State Transition)</h3>
 <p>Code:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
 </span></span></span><span class="line"><span class="cl">stateDiagram-v2
@@ -223,13 +223,13 @@
 </span></span><span class="line"><span class="cl">  InitializeMermaid --&gt; RenderUmlDiagram
 </span></span><span class="line"><span class="cl">  RenderUmlDiagram --&gt; [*]
 </span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>Diagram:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">stateDiagram-v2
+<div class="mermaid-codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">stateDiagram-v2
 </span></span><span class="line"><span class="cl">  [*] --&gt; OpenArticlePage
 </span></span><span class="line"><span class="cl">  OpenArticlePage --&gt; RequestHtml
 </span></span><span class="line"><span class="cl">  RequestHtml --&gt; ReturnMermaidSource
 </span></span><span class="line"><span class="cl">  ReturnMermaidSource --&gt; InitializeMermaid
 </span></span><span class="line"><span class="cl">  InitializeMermaid --&gt; RenderUmlDiagram
-</span></span><span class="line"><span class="cl">  RenderUmlDiagram --&gt; [*]</span></span></code></pre></div><h3 id="5-gantt-chart-project-schedule">5. Gantt Chart (Project Schedule)</h3>
+</span></span><span class="line"><span class="cl">  RenderUmlDiagram --&gt; [*]</span></span></code></pre></div></div><h3 id="5-gantt-chart-project-schedule">5. Gantt Chart (Project Schedule)</h3>
 <p>Code:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
 </span></span></span><span class="line"><span class="cl">gantt
@@ -243,7 +243,7 @@
 </span></span><span class="line"><span class="cl">  Bilingual checks       :        d3, 2026-07-12, 2026-07-13
 </span></span><span class="line"><span class="cl">  Light/Dark regression  :        d4, 2026-07-13, 2026-07-14
 </span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>Diagram:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">gantt
+<div class="mermaid-codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">gantt
 </span></span><span class="line"><span class="cl">  title Mermaid Integration Timeline
 </span></span><span class="line"><span class="cl">  dateFormat  YYYY-MM-DD
 </span></span><span class="line"><span class="cl">  axisFormat  %m-%d
@@ -252,7 +252,7 @@
 </span></span><span class="line"><span class="cl">  Theme style tuning     :active, d2, 2026-07-11, 2026-07-12
 </span></span><span class="line"><span class="cl">  section Validation
 </span></span><span class="line"><span class="cl">  Bilingual checks       :        d3, 2026-07-12, 2026-07-13
-</span></span><span class="line"><span class="cl">  Light/Dark regression  :        d4, 2026-07-13, 2026-07-14</span></span></code></pre></div><h3 id="6-pie-chart-workload-distribution">6. Pie Chart (Workload Distribution)</h3>
+</span></span><span class="line"><span class="cl">  Light/Dark regression  :        d4, 2026-07-13, 2026-07-14</span></span></code></pre></div></div><h3 id="6-pie-chart-workload-distribution">6. Pie Chart (Workload Distribution)</h3>
 <p>Code:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
 </span></span></span><span class="line"><span class="cl">pie title Diagram Example Distribution
@@ -260,10 +260,10 @@
 </span></span><span class="line"><span class="cl">  &#34;Class and State&#34; : 35
 </span></span><span class="line"><span class="cl">  &#34;Planning and Stats&#34; : 30
 </span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>Diagram:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">pie title Diagram Example Distribution
+<div class="mermaid-codeblock"><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">pie title Diagram Example Distribution
 </span></span><span class="line"><span class="cl">  &#34;Flow and Sequence&#34; : 35
 </span></span><span class="line"><span class="cl">  &#34;Class and State&#34; : 35
-</span></span><span class="line"><span class="cl">  &#34;Planning and Stats&#34; : 30</span></span></code></pre></div><h2 id="writing-tips">Writing Tips</h2>
+</span></span><span class="line"><span class="cl">  &#34;Planning and Stats&#34; : 30</span></span></code></pre></div></div><h2 id="writing-tips">Writing Tips</h2>
 <ol>
 <li>Keep each diagram focused on one concern. Use multiple small diagrams instead of one huge diagram.</li>
 <li>Prefer English identifiers in diagrams for easier maintenance in code-related posts.</li>
@@ -747,5 +747,108 @@
     </div>
   </div>
 </footer>
-</div><script src="/js/theme-switcher.min.339cb8828f7501e328cd7310b6c9269028c2b0aa83d993dabdd165df045dc52e.js" integrity="sha256-M5y4go91AeMozXMQtskmkCjCsKqD2ZPavdFl3wRdxS4="></script><script src="/js/sidebar.min.8d897965d82e39784b4da02d345c06f44ecdff6252fcf44c20eeb421f1027114.js" integrity="sha256-jYl5ZdguOXhLTaAtNFwG9E7N/2JS/PRMIO60IfECcRQ="></script></body>
+</div><script src="/js/theme-switcher.min.339cb8828f7501e328cd7310b6c9269028c2b0aa83d993dabdd165df045dc52e.js" integrity="sha256-M5y4go91AeMozXMQtskmkCjCsKqD2ZPavdFl3wRdxS4="></script><script src="/js/sidebar.min.8d897965d82e39784b4da02d345c06f44ecdff6252fcf44c20eeb421f1027114.js" integrity="sha256-jYl5ZdguOXhLTaAtNFwG9E7N/2JS/PRMIO60IfECcRQ="></script><style>
+  .markdown-body .mermaid,
+  .markdown-body .mermaid svg {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  }
+
+  .markdown-body .mermaid {
+    margin: 1.25rem 0;
+    padding: 0.75rem;
+    border: 1px solid var(--borderColor-default, #d0d7de);
+    border-radius: 6px;
+    background: var(--bgColor-muted, #f6f8fa);
+    overflow-x: auto;
+  }
+
+  .markdown-body .mermaid svg {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .markdown-body .mermaid svg text.actor,
+  .markdown-body .mermaid svg .messageText,
+  .markdown-body .mermaid svg .label text {
+    fill: var(--fgColor-default, #24292f) !important;
+    color: var(--fgColor-default, #24292f) !important;
+  }
+
+  .markdown-body .mermaid svg .labelBkg,
+  .markdown-body .mermaid svg .edgeLabel rect {
+    fill: var(--bgColor-default, #ffffff) !important;
+    stroke: var(--borderColor-default, #d0d7de) !important;
+  }
+
+  .markdown-body .mermaid svg .sectionTitle,
+  .markdown-body .mermaid svg .titleText {
+    fill: var(--fgColor-default, #24292f) !important;
+    color: var(--fgColor-default, #24292f) !important;
+  }
+
+  html[data-color-mode="dark"] .markdown-body .mermaid {
+    background: var(--bgColor-neutral-muted, #161b22);
+    border-color: var(--borderColor-muted, #30363d);
+  }
+
+  html[data-color-mode="dark"] .markdown-body .mermaid :is(text, tspan, .messageText, .loopText, .noteText) {
+    fill: var(--fgColor-default, #e6edf3) !important;
+    color: var(--fgColor-default, #e6edf3) !important;
+  }
+
+  html[data-color-mode="dark"] .markdown-body .mermaid svg text.actor,
+  html[data-color-mode="dark"] .markdown-body .mermaid svg .messageText,
+  html[data-color-mode="dark"] .markdown-body .mermaid svg .label text {
+    fill: var(--fgColor-default, #e6edf3) !important;
+    color: var(--fgColor-default, #e6edf3) !important;
+  }
+
+  html[data-color-mode="dark"] .markdown-body .mermaid svg .labelBkg,
+  html[data-color-mode="dark"] .markdown-body .mermaid svg .edgeLabel rect {
+    fill: var(--bgColor-muted, #161b22) !important;
+    stroke: var(--borderColor-muted, #30363d) !important;
+  }
+
+  html[data-color-mode="dark"] .markdown-body .mermaid svg .sectionTitle,
+  html[data-color-mode="dark"] .markdown-body .mermaid svg .titleText {
+    fill: var(--fgColor-default, #e6edf3) !important;
+    color: var(--fgColor-default, #e6edf3) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html[data-color-mode="auto"] .markdown-body .mermaid {
+      background: var(--bgColor-neutral-muted, #161b22);
+      border-color: var(--borderColor-muted, #30363d);
+    }
+
+    html[data-color-mode="auto"] .markdown-body .mermaid :is(text, tspan, .messageText, .loopText, .noteText) {
+      fill: var(--fgColor-default, #e6edf3) !important;
+      color: var(--fgColor-default, #e6edf3) !important;
+    }
+
+    html[data-color-mode="auto"] .markdown-body .mermaid svg text.actor,
+    html[data-color-mode="auto"] .markdown-body .mermaid svg .messageText,
+    html[data-color-mode="auto"] .markdown-body .mermaid svg .label text {
+      fill: var(--fgColor-default, #e6edf3) !important;
+      color: var(--fgColor-default, #e6edf3) !important;
+    }
+
+    html[data-color-mode="auto"] .markdown-body .mermaid svg .labelBkg,
+    html[data-color-mode="auto"] .markdown-body .mermaid svg .edgeLabel rect {
+      fill: var(--bgColor-muted, #161b22) !important;
+      stroke: var(--borderColor-muted, #30363d) !important;
+    }
+
+    html[data-color-mode="auto"] .markdown-body .mermaid svg .sectionTitle,
+    html[data-color-mode="auto"] .markdown-body .mermaid svg .titleText {
+      fill: var(--fgColor-default, #e6edf3) !important;
+      color: var(--fgColor-default, #e6edf3) !important;
+    }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.10.1/dist/mermaid.min.js" defer></script>
+<script src="/js/mermaid-init.min.f397a84230a9874e4c8c77e4cdb64d43d973552a213a73e2bc080467f4931d18.js" integrity="sha256-85eoQjCph05MjHfkzbZNQ9lzVSohOnPivAgEZ/STHRg=" defer></script>
+</body>
 </html>
