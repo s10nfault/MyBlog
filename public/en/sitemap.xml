@@ -2,228 +2,270 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/en/</loc>
-    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+    <loc>https://www.q1w264.com/en/</loc>
+    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/"
+                href="https://www.q1w264.com/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/"
+                href="https://www.q1w264.com/cn/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/c-sharp/</loc>
-    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+    <loc>https://www.q1w264.com/en/categories/</loc>
+    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/tags/c-sharp/"
+                href="https://www.q1w264.com/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/tags/c-sharp/"
+                href="https://www.q1w264.com/cn/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/categories/</loc>
-    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+    <loc>https://www.q1w264.com/en/categories/documentation/</loc>
+    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/categories/"
+                href="https://www.q1w264.com/en/categories/documentation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/categories/"
+                href="https://www.q1w264.com/cn/categories/documentation/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/posts/programming-pattern/plyweight-pattern/</loc>
-    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+    <loc>https://www.q1w264.com/en/tags/documentation/</loc>
+    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/</loc>
-    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+    <loc>https://www.q1w264.com/en/tags/mermaid/</loc>
+    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/posts/"
+                href="https://www.q1w264.com/en/tags/mermaid/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/posts/"
+                href="https://www.q1w264.com/cn/tags/mermaid/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/programming-patterns/</loc>
-    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+    <loc>https://www.q1w264.com/en/posts/mermaid-uml-guide/</loc>
+    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/tags/programming-patterns/"
+                href="https://www.q1w264.com/en/posts/mermaid-uml-guide/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/tags/programming-patterns/"
+                href="https://www.q1w264.com/cn/posts/mermaid-uml-guide/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/categories/reading-note/</loc>
-    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+    <loc>https://www.q1w264.com/en/posts/</loc>
+    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/categories/reading-note/"
+                href="https://www.q1w264.com/en/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/categories/reading-note/"
+                href="https://www.q1w264.com/cn/posts/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/</loc>
-    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+    <loc>https://www.q1w264.com/en/tags/</loc>
+    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/tags/"
+                href="https://www.q1w264.com/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/tags/"
+                href="https://www.q1w264.com/cn/tags/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/posts/programming-pattern/command-pattern/</loc>
+    <loc>https://www.q1w264.com/en/tags/uml/</loc>
+    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.q1w264.com/en/tags/uml/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://www.q1w264.com/cn/tags/uml/"
+                />
+  </url><url>
+    <loc>https://www.q1w264.com/en/tags/c-sharp/</loc>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.q1w264.com/en/tags/c-sharp/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://www.q1w264.com/cn/tags/c-sharp/"
+                />
+  </url><url>
+    <loc>https://www.q1w264.com/en/posts/programming-pattern/plyweight-pattern/</loc>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.q1w264.com/en/tags/programming-patterns/</loc>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.q1w264.com/en/tags/programming-patterns/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://www.q1w264.com/cn/tags/programming-patterns/"
+                />
+  </url><url>
+    <loc>https://www.q1w264.com/en/categories/reading-note/</loc>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.q1w264.com/en/categories/reading-note/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://www.q1w264.com/cn/categories/reading-note/"
+                />
+  </url><url>
+    <loc>https://www.q1w264.com/en/posts/programming-pattern/command-pattern/</loc>
     <lastmod>2026-07-06T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/posts/programming-pattern/command-pattern/"
+                href="https://www.q1w264.com/en/posts/programming-pattern/command-pattern/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/posts/programming-pattern/command-pattern/"
+                href="https://www.q1w264.com/cn/posts/programming-pattern/command-pattern/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/posts/getting-started-with-hugo/</loc>
+    <loc>https://www.q1w264.com/en/posts/getting-started-with-hugo/</loc>
     <lastmod>2026-06-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/posts/getting-started-with-hugo/"
+                href="https://www.q1w264.com/en/posts/getting-started-with-hugo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/posts/getting-started-with-hugo/"
+                href="https://www.q1w264.com/cn/posts/getting-started-with-hugo/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/hugo/</loc>
+    <loc>https://www.q1w264.com/en/tags/hugo/</loc>
     <lastmod>2026-06-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/tags/hugo/"
+                href="https://www.q1w264.com/en/tags/hugo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/tags/hugo/"
+                href="https://www.q1w264.com/cn/tags/hugo/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/static-site/</loc>
+    <loc>https://www.q1w264.com/en/tags/static-site/</loc>
     <lastmod>2026-06-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/tags/static-site/"
+                href="https://www.q1w264.com/en/tags/static-site/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/tags/static-site/"
+                href="https://www.q1w264.com/cn/tags/static-site/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/categories/tutorial/</loc>
+    <loc>https://www.q1w264.com/en/categories/tutorial/</loc>
     <lastmod>2026-06-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/categories/tutorial/"
+                href="https://www.q1w264.com/en/categories/tutorial/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/categories/tutorial/"
+                href="https://www.q1w264.com/cn/categories/tutorial/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/demo/</loc>
+    <loc>https://www.q1w264.com/en/tags/demo/</loc>
     <lastmod>2024-01-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/tags/demo/"
+                href="https://www.q1w264.com/en/tags/demo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/tags/demo/"
+                href="https://www.q1w264.com/cn/tags/demo/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/categories/documentation/</loc>
+    <loc>https://www.q1w264.com/en/tags/gfm/</loc>
     <lastmod>2024-01-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/categories/documentation/"
+                href="https://www.q1w264.com/en/tags/gfm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/categories/documentation/"
+                href="https://www.q1w264.com/cn/tags/gfm/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/gfm/</loc>
+    <loc>https://www.q1w264.com/en/posts/gfm-demo/</loc>
     <lastmod>2024-01-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/tags/gfm/"
+                href="https://www.q1w264.com/en/posts/gfm-demo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/tags/gfm/"
+                href="https://www.q1w264.com/cn/posts/gfm-demo/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/posts/gfm-demo/</loc>
+    <loc>https://www.q1w264.com/en/tags/markdown/</loc>
     <lastmod>2024-01-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/posts/gfm-demo/"
+                href="https://www.q1w264.com/en/tags/markdown/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/posts/gfm-demo/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/en/tags/markdown/</loc>
-    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/en/tags/markdown/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="http://localhost:1313/cn/tags/markdown/"
+                href="https://www.q1w264.com/cn/tags/markdown/"
                 />
   </url>
 </urlset>

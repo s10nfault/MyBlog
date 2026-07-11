@@ -30,9 +30,16 @@
 			<copyright>© 2026 q1w264</copyright>
 		
 		
-			<lastBuildDate>Tue, 07 Jul 2026 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Sat, 11 Jul 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Mermaid UML Guide</title>
+				<link>http://localhost:1313/en/posts/mermaid-uml-guide/</link>
+				<pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/posts/mermaid-uml-guide/</guid>
+				<description>&lt;blockquote class=&#34;markdown-alert markdown-alert-tip&#34;&gt;&#xA;  &lt;p class=&#34;markdown-alert-title&#34;&gt;&lt;svg class=&#34;markdown-alert-icon&#34; viewBox=&#34;0 0 16 16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;M8 1.75a4.25 4.25 0 0 0-2.87 7.38c.45.4.85 1.09 1.05 1.87h3.64c.2-.78.6-1.47 1.05-1.87A4.25 4.25 0 0 0 8 1.75Z&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;1.5&#34; stroke-linejoin=&#34;round&#34;/&gt;&lt;path d=&#34;M6.25 12.25h3.5M6.75 14.25h2.5&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;1.5&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;Tip&lt;/p&gt;&#xA;  &lt;p&gt;&lt;strong&gt;修改&lt;/strong&gt;: This guide has been revised with richer Mermaid examples and a complete repost source link.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&lt;p&gt;This page explains how to write Mermaid diagrams on this site. Example patterns are adapted from &lt;a href=&#34;https://www.runoob.com/markdown/md-draw.html&#34;&gt;Runoob Mermaid tutorial&lt;/a&gt; and adjusted for this blog theme.&lt;/p&gt;&#xA;&lt;blockquote class=&#34;markdown-alert markdown-alert-note&#34;&gt;&#xA;  &lt;p class=&#34;markdown-alert-title&#34;&gt;&lt;svg class=&#34;markdown-alert-icon&#34; viewBox=&#34;0 0 16 16&#34; aria-hidden=&#34;true&#34;&gt;&lt;circle cx=&#34;8&#34; cy=&#34;8&#34; r=&#34;6.25&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;1.5&#34;/&gt;&lt;circle cx=&#34;8&#34; cy=&#34;4.75&#34; r=&#34;.9&#34; fill=&#34;currentColor&#34;/&gt;&lt;path d=&#34;M8 7.25v4&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;1.5&#34; stroke-linecap=&#34;round&#34;/&gt;&lt;/svg&gt;Note&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Flyweight Pattern</title>
 				<link>http://localhost:1313/en/posts/programming-pattern/plyweight-pattern/</link>

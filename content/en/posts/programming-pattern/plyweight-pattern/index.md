@@ -74,5 +74,18 @@ class DirtBlock : Block
 }
 ```
 
+Here is a diagram of structure of our game:
+
+```mermaid
+
+graph TB;
+A("开始") -.-> B{"判断？"}
+B ---|否| C["否：执行逻辑"]
+B ==>|是| D["是：执行逻辑"]
+
+​```
+
+As you see it, When 
+
 
 ## 2. The Flyweight Pattern

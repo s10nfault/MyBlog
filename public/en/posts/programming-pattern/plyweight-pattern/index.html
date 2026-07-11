@@ -98,7 +98,7 @@
     <path d="M2 3.75A1.75 1.75 0 0 1 3.75 2h8.5A1.75 1.75 0 0 1 14 3.75v8.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25Zm1.5 0a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Zm1.75 2a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Zm0 2.5a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Zm0 2.5a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H6a.75.75 0 0 1-.75-.75Z" fill="currentColor"/>
   </svg><span>Original</span></span></div><div class="d-flex flex-items-center color-fg-muted f5 mb-3"><time datetime="2026-07-07T00:00:00Z">
         2026-07-07
-      </time><span class="mx-2">&middot;</span><span>1 min read</span></div><div class="d-flex flex-wrap mb-3" style="gap: 0.5rem;"><a href="/en/tags/programming-patterns/" class="topic-tag">Programming Patterns</a><a href="/en/tags/c-sharp/" class="topic-tag">C#</a></div><img src="/en/posts/programming-pattern/plyweight-pattern/Flyweight-pattern.png" alt="Flyweight Pattern" loading="lazy" class="rounded-2 width-full mb-3" style="max-height: 400px; object-fit: cover;"></header>
+      </time><span class="mx-2">&middot;</span><span>2 min read</span></div><div class="d-flex flex-wrap mb-3" style="gap: 0.5rem;"><a href="/en/tags/programming-patterns/" class="topic-tag">Programming Patterns</a><a href="/en/tags/c-sharp/" class="topic-tag">C#</a></div><img src="/en/posts/programming-pattern/plyweight-pattern/Flyweight-pattern.png" alt="Flyweight Pattern" loading="lazy" class="rounded-2 width-full mb-3" style="max-height: 400px; object-fit: cover;"></header>
 
   <div class="markdown-body">
     <p>Extracting shared properties and sharing them via a single object is the core idea of the <strong>Flyweight Pattern</strong>.</p>
@@ -153,8 +153,19 @@
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">DirtBlock</span> <span class="p">:</span> <span class="n">Block</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">DirtBlock</span><span class="p">()</span> <span class="p">:</span> <span class="k">base</span> <span class="p">(</span><span class="k">new</span> <span class="n">self</span><span class="p">(),</span> <span class="n">BlockType</span><span class="p">.</span><span class="n">Soft</span><span class="p">,</span> <span class="s">&#34;Dirt&#34;</span><span class="p">){}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><h2 id="2-the-flyweight-pattern">2. The Flyweight Pattern</h2>
-
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><p>Here is a diagram of structure of our game:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">graph TB;
+</span></span><span class="line"><span class="cl">A(&#34;开始&#34;) -.-&gt; B{&#34;判断？&#34;}
+</span></span><span class="line"><span class="cl">B ---|否| C[&#34;否：执行逻辑&#34;]
+</span></span><span class="line"><span class="cl">B ==&gt;|是| D[&#34;是：执行逻辑&#34;]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">​```
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">As you see it, When 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## 2. The Flyweight Pattern</span></span></code></pre></div>
   </div><div class="post-notice post-notice-subtle post-notice-original mt-4 f6">
   <p class="mb-0">
     <a href="http://localhost:1313/en/posts/programming-pattern/plyweight-pattern/">Flyweight Pattern</a>
@@ -546,6 +557,8 @@
 </script><nav class="border-top pt-4 mt-4">
     <div class="d-flex flex-justify-between"><a href="/en/posts/programming-pattern/command-pattern/" class="Link--secondary">
         &larr; Command Pattern
+      </a><a href="/en/posts/mermaid-uml-guide/" class="Link--secondary">
+        Mermaid UML Guide &rarr;
       </a></div>
   </nav></article>
           </div>
@@ -581,7 +594,7 @@
   <h3 class="h5 mb-2">Categories</h3>
   <ul class="list-style-none"><li class="mb-1">
       <a href="/en/categories/documentation/" class="Link--secondary">
-        Documentation <span class="Counter Counter--secondary ml-1">1</span>
+        Documentation <span class="Counter Counter--secondary ml-1">2</span>
       </a>
     </li><li class="mb-1">
       <a href="/en/categories/reading-note/" class="Link--secondary">
@@ -595,6 +608,9 @@
 </div><div class="color-bg-subtle rounded-2 p-3 mb-3">
   <h3 class="h5 mb-2">Recent Posts</h3>
   <ul class="list-style-none"><li class="mb-2">
+      <a href="/en/posts/mermaid-uml-guide/" class="Link--primary">Mermaid UML Guide</a><span class="color-fg-muted f6 d-block">
+        2026-07-11
+      </span></li><li class="mb-2">
       <a href="/en/posts/programming-pattern/plyweight-pattern/" class="Link--primary">Flyweight Pattern</a><span class="color-fg-muted f6 d-block">
         2026-07-07
       </span></li><li class="mb-2">
@@ -616,7 +632,7 @@
     data-view-all="/en/tags/"
     data-label-more="Show more"
     data-label-less="Show less"
-    data-label-view-all="View all"><a href="/en/tags/c-sharp/" class="topic-tag">C#</a><a href="/en/tags/demo/" class="topic-tag">Demo</a><a href="/en/tags/gfm/" class="topic-tag">GFM</a><a href="/en/tags/hugo/" class="topic-tag">Hugo</a><a href="/en/tags/markdown/" class="topic-tag">Markdown</a><a href="/en/tags/programming-patterns/" class="topic-tag">Programming Patterns</a><a href="/en/tags/static-site/" class="topic-tag">Static Site</a></div>
+    data-label-view-all="View all"><a href="/en/tags/c-sharp/" class="topic-tag">C#</a><a href="/en/tags/demo/" class="topic-tag">Demo</a><a href="/en/tags/documentation/" class="topic-tag">Documentation</a><a href="/en/tags/gfm/" class="topic-tag">GFM</a><a href="/en/tags/hugo/" class="topic-tag">Hugo</a><a href="/en/tags/markdown/" class="topic-tag">Markdown</a><a href="/en/tags/mermaid/" class="topic-tag">mermaid</a><a href="/en/tags/programming-patterns/" class="topic-tag">Programming Patterns</a><a href="/en/tags/static-site/" class="topic-tag">Static Site</a><a href="/en/tags/uml/" class="topic-tag">uml</a></div>
 </div></aside></div>
         </div></div>
     </main><footer class="site-footer border-top mt-6" role="contentinfo">
@@ -626,6 +642,5 @@
     </div>
   </div>
 </footer>
-</div><script src="/js/theme-switcher.min.339cb8828f7501e328cd7310b6c9269028c2b0aa83d993dabdd165df045dc52e.js" integrity="sha256-M5y4go91AeMozXMQtskmkCjCsKqD2ZPavdFl3wRdxS4="></script><script src="/js/sidebar.min.8d897965d82e39784b4da02d345c06f44ecdff6252fcf44c20eeb421f1027114.js" integrity="sha256-jYl5ZdguOXhLTaAtNFwG9E7N/2JS/PRMIO60IfECcRQ="></script>
-</body>
+</div><script src="/js/theme-switcher.min.339cb8828f7501e328cd7310b6c9269028c2b0aa83d993dabdd165df045dc52e.js" integrity="sha256-M5y4go91AeMozXMQtskmkCjCsKqD2ZPavdFl3wRdxS4="></script><script src="/js/sidebar.min.8d897965d82e39784b4da02d345c06f44ecdff6252fcf44c20eeb421f1027114.js" integrity="sha256-jYl5ZdguOXhLTaAtNFwG9E7N/2JS/PRMIO60IfECcRQ="></script></body>
 </html>

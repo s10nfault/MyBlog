@@ -31,5 +31,8 @@
   <script src="{{ $themeJs.RelPermalink }}" integrity="{{ $themeJs.Data.Integrity }}"></script>
   {{- $sidebarJs := resources.Get "js/sidebar.js" | minify | fingerprint -}}
   <script src="{{ $sidebarJs.RelPermalink }}" integrity="{{ $sidebarJs.Data.Integrity }}"></script>
+  {{- if .Store.Get "hasMermaid" -}}
+  {{- partial "mermaid.html" . -}}
+  {{- end -}}
 </body>
 </html>

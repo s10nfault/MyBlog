@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="cn" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Mermaid UML 使用指南 | q1w264的博客</title><meta name="description" content="介绍如何在本站编写 Mermaid UML 图，并提供常见示例与排错方法。"><meta name="author" content="q1w264"><meta property="og:title" content="Mermaid UML 使用指南"><meta property="og:description" content="介绍如何在本站编写 Mermaid UML 图，并提供常见示例与排错方法。"><meta property="og:type" content="article"><meta property="og:url" content="http://localhost:1313/cn/posts/mermaid-uml-guide/"><meta property="og:site_name" content="q1w264的博客"><meta property="og:locale" content="cn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mermaid UML 使用指南">
+<meta name="twitter:description" content="介绍如何在本站编写 Mermaid UML 图，并提供常见示例与排错方法。">
+<link rel="canonical" href="http://localhost:1313/cn/posts/mermaid-uml-guide/">
+
+<link rel="alternate" hreflang="en" href="http://localhost:1313/en/posts/mermaid-uml-guide/"><link rel="stylesheet" href="/css/primer.min.c12daf26af408c64f29cc993dd5ab422334e71e50fa7198111b729fdf674e34d.css" integrity="sha256-wS2vJq9AjGTynMmT3Vq0IjNOceUPpxmBEbcp/fZ0400=">
+
+<link rel="stylesheet" href="/css/custom.min.18ec7896776b8be85296a5a8a68d269e5e29b3291ab32082f78e6f5b49a16c12.css" integrity="sha256-GOx4lndri&#43;hSlqWopo0mnl4psykasyCC945vW0mhbBI=">
+
+<link rel="stylesheet" href="/css/sidebar.min.00992772e6503bf2752e2b63a8479e5699ac8a7209bdf491530bb657ae5fe0f7.css" integrity="sha256-AJkncuZQO/J1LitjqEeeVpmsinIJvfSRUwu2V65f4Pc=">
+
+<link rel="stylesheet" href="/css/footer.min.2236d72bfbc1475e0dff24ec91fa53e7a7af8b000e7bcb66c15a8756010ccdf0.css" integrity="sha256-IjbXK/vBR14N/yTskfpT56eviwAOe8tmwVqHVgEMzfA=">
+
+<link rel="stylesheet" href="/css/post-notice.min.aa0e846480161df809a2697eefc5f923ff518bacf7dd3b8fb071e1b342580270.css" integrity="sha256-qg6EZIAWHfgJoml&#43;78X5I/9Ri6z33TuPsHHhs0JYAnA=">
+
+<link rel="stylesheet" href="/css/syntax.min.d39565d36e9e016612c51747c82dc9bd39d03001fda212a3fc917512ac916e9d.css" integrity="sha256-05Vl026eAWYSxRdHyC3JvTnQMAH9ohKj/JF1EqyRbp0=">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180x180.png"><link rel="apple-touch-icon" sizes="152x152" href="/static/apple-touch-icon-152x152.png"><link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QP462JDKRZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QP462JDKRZ');
+</script>
+<script>
+  (function() {
+    const saved = localStorage.getItem('theme');
+    const html = document.documentElement;
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const resolved = (saved === 'light' || saved === 'dark') ? saved : (prefersDark ? 'dark' : 'light');
+    html.setAttribute('data-color-mode', resolved);
+    html.setAttribute('data-light-theme', resolved);
+    html.setAttribute('data-dark-theme', resolved);
+  })();
+</script></head>
+<body>
+  <div class="d-flex flex-column min-height-full"><header class="AppHeader">
+  <div class="AppHeader-globalBar">
+    <div class="AppHeader-globalBar-start">
+      <a href="/cn/" class="AppHeader-logo" aria-label="q1w264的博客"><span class="AppHeader-logo-text">q1w264的博客</span></a>
+
+      <nav class="AppHeader-nav" aria-label="主导航"><a href="/cn/about/" class="AppHeader-nav-item">关于</a></nav>
+    </div>
+
+    <div class="AppHeader-globalBar-end"><button type="button" id="theme-toggle"
+  class="tooltipped tooltipped-s"
+  aria-label="系统主题"
+  data-tooltip-light="浅色主题"
+  data-tooltip-dark="深色主题"
+  data-tooltip-auto="系统主题">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" class="octicon theme-icon-light" style="display: none;">
+    <path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm5.657-8.157a.75.75 0 0 1 0 1.061l-1.061 1.06a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.193 9.193a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 1 1-1.061-1.06l1.06-1.061a.75.75 0 0 1 1.061 0ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0ZM3 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 3 8Zm13 0a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 16 8Zm-8 5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 13Zm3.536-1.464a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061Zm-9.193-9.193a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061L2.343 3.403a.75.75 0 0 1 0-1.06Z"></path>
+  </svg>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" class="octicon theme-icon-dark" style="display: none;">
+    <path d="M9.598 1.591a.749.749 0 0 1 .785-.175 7.001 7.001 0 1 1-8.967 8.967.75.75 0 0 1 .961-.96 5.5 5.5 0 0 0 7.046-7.046.75.75 0 0 1 .175-.786Zm1.616 1.945a7 7 0 0 1-7.678 7.678 5.499 5.499 0 1 0 7.678-7.678Z"></path>
+  </svg>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" class="octicon theme-icon-auto" style="display: none;">
+    <path d="M14.25 1c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 14.25 12h-3.727c.099 1.041.52 1.872 1.292 2.757A.752.752 0 0 1 11.25 16h-6.5a.75.75 0 0 1-.565-1.243c.772-.885 1.193-1.716 1.292-2.757H1.75A1.75 1.75 0 0 1 0 10.25v-7.5C0 1.784.784 1 1.75 1ZM1.75 2.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25ZM9.018 13H6.982a5.72 5.72 0 0 1-.765 1.5h3.566a5.72 5.72 0 0 1-.765-1.5Z"></path>
+  </svg>
+</button>
+<details class="dropdown details-reset details-overlay AppHeader-dropdown">
+        <summary class="AppHeader-button" aria-haspopup="true" aria-label="选择语言">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.581 4.948-.111.187-.229.371-.352.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.241.365.352.552.715 1.192 1.437 2.874 1.581 4.948Z"></path>
+          </svg>
+          <span class="AppHeader-button-text">简体中文</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="12" height="12" fill="currentColor" class="AppHeader-dropdown-caret">
+            <path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"></path>
+          </svg>
+        </summary>
+        <ul class="dropdown-menu dropdown-menu-sw"><li>
+            <a href="/en/posts/mermaid-uml-guide/" class="dropdown-item" lang="en">English</a>
+          </li><li>
+            <a href="/cn/posts/mermaid-uml-guide/" class="dropdown-item selected" lang="cn">简体中文</a>
+          </li></ul>
+      </details></div>
+  </div>
+</header>
+<main class="flex-auto">
+      <div class="container-xl px-3 px-md-4 px-lg-5 py-4"><div class="Layout Layout--sidebarPosition-end Layout--flowRow-until-md">
+          <div class="Layout-main"><article>
+  <header class="mb-4">
+    <h1 class="f1 lh-condensed mb-1">Mermaid UML 使用指南</h1><div class="post-type-badge-hero-wrap"><a href="https://www.runoob.com/markdown/md-draw.html" target="_blank" rel="noopener noreferrer" class="post-type-badge-link" aria-label="原文来源">
+  <span class="post-type-badge post-type-badge-solid post-type-badge-hero post-type-badge-repost"><svg class="post-type-badge-icon" viewBox="0 0 16 16" aria-hidden="true">
+    <path d="M3.25 2.75a.75.75 0 0 1 .75.75v5.69l1.72-1.72a.75.75 0 1 1 1.06 1.06L3.78 11.56a.75.75 0 0 1-1.06 0L-.28 8.53a.75.75 0 0 1 1.06-1.06L2.5 9.19V3.5a.75.75 0 0 1 .75-.75Zm9.5 10.5a.75.75 0 0 1-.75-.75V6.81l-1.72 1.72a.75.75 0 1 1-1.06-1.06l3.03-3.03a.75.75 0 0 1 1.06 0l3.03 3.03a.75.75 0 1 1-1.06 1.06L13.5 6.81v5.69a.75.75 0 0 1-.75.75Z" fill="currentColor"/>
+  </svg><span>转载</span>
+  </span>
+</a></div><div class="d-flex flex-items-center color-fg-muted f5 mb-3"><time datetime="2026-07-11T00:00:00Z">
+        2026-07-11
+      </time><span class="mx-2">&middot;</span><span>2 分钟阅读</span><span class="mx-2">&middot;</span><span>q1w264</span></div><div class="d-flex flex-wrap mb-3" style="gap: 0.5rem;"><a href="/cn/tags/mermaid/" class="topic-tag">mermaid</a><a href="/cn/tags/uml/" class="topic-tag">uml</a><a href="/cn/tags/%E6%96%87%E6%A1%A3/" class="topic-tag">文档</a></div></header>
+
+  <div class="markdown-body">
+    <blockquote class="markdown-alert markdown-alert-tip">
+  <p class="markdown-alert-title"><svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.75a4.25 4.25 0 0 0-2.87 7.38c.45.4.85 1.09 1.05 1.87h3.64c.2-.78.6-1.47 1.05-1.87A4.25 4.25 0 0 0 8 1.75Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M6.25 12.25h3.5M6.75 14.25h2.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>提示</p>
+  <p><strong>修改</strong>：本文已根据站点主题重写示例，补充了更完整的 Mermaid 事例，并补齐转载来源。</p>
+</blockquote><p>这篇文章说明如何在本站使用 Mermaid 编写图表，示例主要参考 <a href="https://www.runoob.com/markdown/md-draw.html">菜鸟教程 Mermaid 图表</a>，并结合本博客主题做了可读性优化。</p>
+<blockquote class="markdown-alert markdown-alert-note">
+  <p class="markdown-alert-title"><svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="4.75" r=".9" fill="currentColor"/><path d="M8 7.25v4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>注意</p>
+  <p>Mermaid 采用按需加载。只有包含 Mermaid 代码块的页面才会加载 Mermaid 脚本。</p>
+</blockquote><h2 id="快速开始">快速开始</h2>
+<p>使用语言标识为 <code>mermaid</code> 的代码块：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
+</span></span></span><span class="line"><span class="cl">classDiagram
+</span></span><span class="line"><span class="cl">  class GameObject {
+</span></span><span class="line"><span class="cl">    +id: Guid
+</span></span><span class="line"><span class="cl">    +update(dt)
+</span></span><span class="line"><span class="cl">  }
+</span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><h2 id="uml-示例代码与图一一对应">UML 示例（代码与图一一对应）</h2>
+<p>以下每个案例都采用“代码”+“效果图”成对展示，并选取更典型的业务场景，方便直接复制和对照。</p>
+<h3 id="1-流程图发布流程">1. 流程图（发布流程）</h3>
+<p>代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
+</span></span></span><span class="line"><span class="cl">flowchart TD
+</span></span><span class="line"><span class="cl">  A[编辑 Markdown] --&gt; B[提交仓库]
+</span></span><span class="line"><span class="cl">  B --&gt; C[触发 Hugo 构建]
+</span></span><span class="line"><span class="cl">  C --&gt; D{是否包含 mermaid 代码块}
+</span></span><span class="line"><span class="cl">  D -- 否 --&gt; E[输出普通页面]
+</span></span><span class="line"><span class="cl">  D -- 是 --&gt; F[按需加载 Mermaid]
+</span></span><span class="line"><span class="cl">  F --&gt; G[渲染 SVG 图表]
+</span></span><span class="line"><span class="cl">  G --&gt; H[发布站点]
+</span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>效果：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">flowchart TD
+</span></span><span class="line"><span class="cl">  A[编辑 Markdown] --&gt; B[提交仓库]
+</span></span><span class="line"><span class="cl">  B --&gt; C[触发 Hugo 构建]
+</span></span><span class="line"><span class="cl">  C --&gt; D{是否包含 mermaid 代码块}
+</span></span><span class="line"><span class="cl">  D -- 否 --&gt; E[输出普通页面]
+</span></span><span class="line"><span class="cl">  D -- 是 --&gt; F[按需加载 Mermaid]
+</span></span><span class="line"><span class="cl">  F --&gt; G[渲染 SVG 图表]
+</span></span><span class="line"><span class="cl">  G --&gt; H[发布站点]</span></span></code></pre></div><h3 id="2-时序图页面请求链路">2. 时序图（页面请求链路）</h3>
+<p>代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
+</span></span></span><span class="line"><span class="cl">sequenceDiagram
+</span></span><span class="line"><span class="cl">  actor 用户
+</span></span><span class="line"><span class="cl">  participant 浏览器
+</span></span><span class="line"><span class="cl">  participant 博客站点
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  用户-&gt;&gt;浏览器: 打开文章页面
+</span></span><span class="line"><span class="cl">  浏览器-&gt;&gt;博客站点: 请求 HTML
+</span></span><span class="line"><span class="cl">  博客站点--&gt;&gt;浏览器: 返回包含 Mermaid 源码的页面
+</span></span><span class="line"><span class="cl">  浏览器-&gt;&gt;浏览器: 初始化 Mermaid
+</span></span><span class="line"><span class="cl">  浏览器--&gt;&gt;用户: 渲染 UML 图
+</span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>效果：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">sequenceDiagram
+</span></span><span class="line"><span class="cl">  actor 用户
+</span></span><span class="line"><span class="cl">  participant 浏览器
+</span></span><span class="line"><span class="cl">  participant 博客站点
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  用户-&gt;&gt;浏览器: 打开文章页面
+</span></span><span class="line"><span class="cl">  浏览器-&gt;&gt;博客站点: 请求 HTML
+</span></span><span class="line"><span class="cl">  博客站点--&gt;&gt;浏览器: 返回包含 Mermaid 源码的页面
+</span></span><span class="line"><span class="cl">  浏览器-&gt;&gt;浏览器: 初始化 Mermaid
+</span></span><span class="line"><span class="cl">  浏览器--&gt;&gt;用户: 渲染 UML 图</span></span></code></pre></div><h3 id="3-类图对象职责">3. 类图（对象职责）</h3>
+<p>代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
+</span></span></span><span class="line"><span class="cl">classDiagram
+</span></span><span class="line"><span class="cl">class 用户 {
+</span></span><span class="line"><span class="cl">  +打开文章页面(url)
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">class 浏览器 {
+</span></span><span class="line"><span class="cl">  +请求HTML(url)
+</span></span><span class="line"><span class="cl">  +初始化Mermaid()
+</span></span><span class="line"><span class="cl">  +渲染UML图(source)
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">class 博客站点 {
+</span></span><span class="line"><span class="cl">  +返回包含Mermaid源码的页面(path)
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">class Mermaid渲染器 {
+</span></span><span class="line"><span class="cl">  +initialize(config)
+</span></span><span class="line"><span class="cl">  +run(source)
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">用户 --&gt; 浏览器 : 打开文章页面
+</span></span><span class="line"><span class="cl">浏览器 --&gt; 博客站点 : 请求HTML
+</span></span><span class="line"><span class="cl">博客站点 --&gt; 浏览器 : 返回Mermaid源码
+</span></span><span class="line"><span class="cl">浏览器 --&gt; Mermaid渲染器 : 初始化并渲染
+</span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>效果：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">classDiagram
+</span></span><span class="line"><span class="cl">class 用户 {
+</span></span><span class="line"><span class="cl">  +打开文章页面(url)
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">class 浏览器 {
+</span></span><span class="line"><span class="cl">  +请求HTML(url)
+</span></span><span class="line"><span class="cl">  +初始化Mermaid()
+</span></span><span class="line"><span class="cl">  +渲染UML图(source)
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">class 博客站点 {
+</span></span><span class="line"><span class="cl">  +返回包含Mermaid源码的页面(path)
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">class Mermaid渲染器 {
+</span></span><span class="line"><span class="cl">  +initialize(config)
+</span></span><span class="line"><span class="cl">  +run(source)
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">用户 --&gt; 浏览器 : 打开文章页面
+</span></span><span class="line"><span class="cl">浏览器 --&gt; 博客站点 : 请求HTML
+</span></span><span class="line"><span class="cl">博客站点 --&gt; 浏览器 : 返回Mermaid源码
+</span></span><span class="line"><span class="cl">浏览器 --&gt; Mermaid渲染器 : 初始化并渲染</span></span></code></pre></div><h3 id="4-状态图渲染状态迁移">4. 状态图（渲染状态迁移）</h3>
+<p>代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
+</span></span></span><span class="line"><span class="cl">stateDiagram-v2
+</span></span><span class="line"><span class="cl">  [*] --&gt; 打开文章页面
+</span></span><span class="line"><span class="cl">  打开文章页面 --&gt; 请求HTML
+</span></span><span class="line"><span class="cl">  请求HTML --&gt; 返回包含Mermaid源码的页面
+</span></span><span class="line"><span class="cl">  返回包含Mermaid源码的页面 --&gt; 初始化Mermaid
+</span></span><span class="line"><span class="cl">  初始化Mermaid --&gt; 渲染UML图
+</span></span><span class="line"><span class="cl">  渲染UML图 --&gt; [*]
+</span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>效果：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">stateDiagram-v2
+</span></span><span class="line"><span class="cl">  [*] --&gt; 打开文章页面
+</span></span><span class="line"><span class="cl">  打开文章页面 --&gt; 请求HTML
+</span></span><span class="line"><span class="cl">  请求HTML --&gt; 返回包含Mermaid源码的页面
+</span></span><span class="line"><span class="cl">  返回包含Mermaid源码的页面 --&gt; 初始化Mermaid
+</span></span><span class="line"><span class="cl">  初始化Mermaid --&gt; 渲染UML图
+</span></span><span class="line"><span class="cl">  渲染UML图 --&gt; [*]</span></span></code></pre></div><h3 id="5-甘特图项目排期">5. 甘特图（项目排期）</h3>
+<p>代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
+</span></span></span><span class="line"><span class="cl">gantt
+</span></span><span class="line"><span class="cl">  title Mermaid 接入计划
+</span></span><span class="line"><span class="cl">  dateFormat  YYYY-MM-DD
+</span></span><span class="line"><span class="cl">  axisFormat  %m-%d
+</span></span><span class="line"><span class="cl">  section 开发
+</span></span><span class="line"><span class="cl">  模板接入           :done,    d1, 2026-07-10, 2026-07-11
+</span></span><span class="line"><span class="cl">  主题样式调优       :active,  d2, 2026-07-11, 2026-07-12
+</span></span><span class="line"><span class="cl">  section 验证
+</span></span><span class="line"><span class="cl">  中英文页面校验     :         d3, 2026-07-12, 2026-07-13
+</span></span><span class="line"><span class="cl">  深浅色模式回归     :         d4, 2026-07-13, 2026-07-14
+</span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>效果：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">gantt
+</span></span><span class="line"><span class="cl">  title Mermaid 接入计划
+</span></span><span class="line"><span class="cl">  dateFormat  YYYY-MM-DD
+</span></span><span class="line"><span class="cl">  axisFormat  %m-%d
+</span></span><span class="line"><span class="cl">  section 开发
+</span></span><span class="line"><span class="cl">  模板接入           :done,    d1, 2026-07-10, 2026-07-11
+</span></span><span class="line"><span class="cl">  主题样式调优       :active,  d2, 2026-07-11, 2026-07-12
+</span></span><span class="line"><span class="cl">  section 验证
+</span></span><span class="line"><span class="cl">  中英文页面校验     :         d3, 2026-07-12, 2026-07-13
+</span></span><span class="line"><span class="cl">  深浅色模式回归     :         d4, 2026-07-13, 2026-07-14</span></span></code></pre></div><h3 id="6-饼图构成占比">6. 饼图（构成占比）</h3>
+<p>代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="markdown"><span class="line"><span class="cl"><span class="s">```mermaid
+</span></span></span><span class="line"><span class="cl">pie title 本文图表示例分布
+</span></span><span class="line"><span class="cl">  &#34;流程与时序&#34; : 35
+</span></span><span class="line"><span class="cl">  &#34;类图与状态图&#34; : 35
+</span></span><span class="line"><span class="cl">  &#34;计划与统计&#34; : 30
+</span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div><p>效果：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">pie title 本文图表示例分布
+</span></span><span class="line"><span class="cl">  &#34;流程与时序&#34; : 35
+</span></span><span class="line"><span class="cl">  &#34;类图与状态图&#34; : 35
+</span></span><span class="line"><span class="cl">  &#34;计划与统计&#34; : 30</span></span></code></pre></div><h2 id="写作建议">写作建议</h2>
+<ol>
+<li>每张图聚焦一个主题，尽量拆分为多张小图。</li>
+<li>技术文章优先使用英文标识符，便于和代码命名保持一致。</li>
+<li>标签文本过长时，建议缩短并把细节写在图外正文，避免在小屏上重叠。</li>
+<li>图过宽时容器支持横向滚动，无需手动缩放字体。</li>
+<li>新增示例时，先在本地 <code>hugo -D</code> 验证，再发布。</li>
+</ol>
+<h2 id="常见问题">常见问题</h2>
+<blockquote class="markdown-alert markdown-alert-tip">
+  <p class="markdown-alert-title"><svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.75a4.25 4.25 0 0 0-2.87 7.38c.45.4.85 1.09 1.05 1.87h3.64c.2-.78.6-1.47 1.05-1.87A4.25 4.25 0 0 0 8 1.75Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M6.25 12.25h3.5M6.75 14.25h2.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>提示</p>
+  <p>图不显示时，优先打开浏览器控制台查看 Mermaid 语法错误。</p>
+</blockquote><ol>
+<li>Mermaid 关键字拼写错误会导致该图渲染失败。</li>
+<li>代码块语言必须精确写成 <code>mermaid</code>。</li>
+<li>同一个 Mermaid 代码块内不要混用 Tab 与空格。</li>
+<li>切换主题后图表会自动重渲染，颜色会同步当前模式。</li>
+<li>若图表不显示，先检查语法再检查网络（CDN 是否可访问）。</li>
+</ol>
+<h2 id="兼容性说明">兼容性说明</h2>
+<ul>
+<li>当前仅支持 Mermaid 语法。</li>
+<li>暂未启用 PlantUML 或 Kroki。</li>
+<li>Mermaid 资源会按页面按需加载。</li>
+</ul>
+
+  </div><div class="post-notice post-notice-subtle post-notice-repost mt-4 f6"><p class="mb-0">
+    <strong>原文来源:</strong>
+    <a href="https://www.runoob.com/markdown/md-draw.html" target="_blank" rel="noopener noreferrer">菜鸟教程 - Markdown Mermaid 图表</a>
+  </p></div><div class="border-top pt-4 mt-4 share-block" data-share-root data-share-url="http://localhost:1313/cn/posts/mermaid-uml-guide/" data-share-title="Mermaid UML 使用指南" data-share-copy-success="链接已复制。" data-share-copy-failure="复制失败，请手动复制这个链接：">
+  <style>
+    .share-block {
+      --share-button-bg: var(--button-default-bgColor, var(--bgColor-muted, #f6f8fa));
+      --share-button-fg: var(--fgColor-default, #1f2328);
+      --share-border: var(--borderColor-default, #d0d7de);
+      --share-border-strong: var(--borderColor-muted, #afb8c1);
+      --share-muted: var(--fgColor-muted, #57606a);
+      --share-icon-fg: var(--share-muted);
+      --share-panel-bg: var(--bgColor-muted, #f6f8fa);
+      --share-surface-bg: var(--bgColor-default, #ffffff);
+      --share-badge-bg: var(--neutral-muted, rgba(175, 184, 193, 0.2));
+      --share-accent: var(--accent-fgColor, #0969da);
+      --share-accent-ring: color-mix(in srgb, var(--accent-fgColor, #0969da) 14%, transparent);
+      --share-accent-subtle: var(--accent-subtle, rgba(9, 105, 218, 0.12));
+    }
+
+    html[data-color-mode="dark"] .share-block {
+      --share-button-bg: var(--button-default-bgColor, #212830);
+      --share-button-fg: var(--fgColor-default, #f0f6fc);
+      --share-border: var(--borderColor-default, #3d444d);
+      --share-border-strong: var(--borderColor-muted, #656c76);
+      --share-muted: var(--fgColor-muted, #9198a1);
+      --share-icon-fg: var(--fgColor-default, #dce6f2);
+      --share-panel-bg: var(--bgColor-muted, #161b22);
+      --share-surface-bg: var(--bgColor-default, #0d1117);
+      --share-badge-bg: var(--neutral-muted, rgba(110, 118, 129, 0.34));
+      --share-accent: var(--accent-fgColor, #4493f8);
+      --share-accent-ring: color-mix(in srgb, var(--accent-fgColor, #4493f8) 18%, transparent);
+      --share-accent-subtle: var(--accent-subtle, rgba(56, 139, 253, 0.18));
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html[data-color-mode="auto"] .share-block {
+        --share-button-bg: var(--button-default-bgColor, #212830);
+        --share-button-fg: var(--fgColor-default, #f0f6fc);
+        --share-border: var(--borderColor-default, #3d444d);
+        --share-border-strong: var(--borderColor-muted, #656c76);
+        --share-muted: var(--fgColor-muted, #9198a1);
+        --share-icon-fg: var(--fgColor-default, #dce6f2);
+        --share-panel-bg: var(--bgColor-muted, #161b22);
+        --share-surface-bg: var(--bgColor-default, #0d1117);
+        --share-badge-bg: var(--neutral-muted, rgba(110, 118, 129, 0.34));
+        --share-accent: var(--accent-fgColor, #4493f8);
+        --share-accent-ring: color-mix(in srgb, var(--accent-fgColor, #4493f8) 18%, transparent);
+        --share-accent-subtle: var(--accent-subtle, rgba(56, 139, 253, 0.18));
+      }
+    }
+
+    .share-block .share-actions {
+      gap: 0.5rem;
+    }
+
+    .share-block .share-button {
+      align-items: center;
+      background: var(--share-button-bg);
+      border: 1px solid var(--share-border);
+      border-radius: 999px;
+      color: var(--share-button-fg);
+      display: inline-flex;
+      gap: 0.35rem;
+      justify-content: center;
+      padding: 0.45rem 0.85rem;
+      transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .share-block .share-button:hover,
+    .share-block .share-button:focus-visible {
+      background: var(--share-panel-bg);
+      border-color: var(--share-accent);
+      box-shadow: 0 0 0 3px var(--share-accent-ring);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .share-block .share-button:focus-visible {
+      outline: none;
+    }
+
+    .share-block .share-icon {
+      display: inline-flex;
+      flex: 0 0 auto;
+    }
+
+    .share-block .share-icon-badge {
+      align-items: center;
+      background: var(--share-badge-bg);
+      border: 1px solid color-mix(in srgb, var(--share-border-strong) 75%, transparent);
+      border-radius: 0.55rem;
+      color: var(--share-icon-fg);
+      display: inline-flex;
+      height: 1.65rem;
+      justify-content: center;
+      min-width: 1.65rem;
+      overflow: visible;
+      padding: 0.1rem;
+    }
+
+    .share-block .share-icon svg {
+      display: block;
+      fill: currentColor;
+      height: 1rem;
+      width: 1rem;
+    }
+
+    .share-block .share-icon--weibo svg {
+      height: 1.12rem;
+      width: 1.12rem;
+    }
+
+    .share-block .share-icon--reddit svg {
+      height: 1.08rem;
+      width: 1.08rem;
+    }
+
+    .share-block .share-button:hover .share-icon-badge,
+    .share-block .share-button:focus-visible .share-icon-badge {
+      background: var(--share-accent-subtle);
+      color: var(--share-accent);
+    }
+
+    html[data-color-mode="dark"] .share-block .share-icon-badge {
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--share-border-strong) 38%, transparent);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html[data-color-mode="auto"] .share-block .share-icon-badge {
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--share-border-strong) 38%, transparent);
+      }
+    }
+
+    .share-block .share-button span:last-child {
+      font-weight: 500;
+    }
+
+    .share-block .share-panel {
+      background: var(--share-panel-bg);
+      border: 1px solid var(--share-border);
+      border-radius: 0.5rem;
+      margin-top: 0.75rem;
+      max-width: 26rem;
+      padding: 1rem;
+    }
+
+    .share-block .share-panel[hidden] {
+      display: none;
+    }
+
+    .share-block .share-panel-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .share-block .share-panel-text {
+      color: var(--share-muted);
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .share-block .share-qr-frame {
+      align-items: center;
+      background: var(--share-surface-bg);
+      border: 1px solid var(--share-border);
+      border-radius: 0.5rem;
+      display: inline-flex;
+      justify-content: center;
+      min-height: 180px;
+      min-width: 180px;
+      padding: 0.75rem;
+    }
+
+    .share-block .share-qr-image {
+      display: block;
+      height: 180px;
+      width: 180px;
+    }
+
+    .share-block .share-feedback {
+      color: var(--share-muted);
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+      min-height: 1.25rem;
+    }
+
+    @media (max-width: 543px) {
+      .share-block .share-actions .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .share-block .share-button {
+        width: 100%;
+      }
+
+      .share-block .share-panel {
+        max-width: none;
+      }
+    }
+  </style>
+
+  <p class="f5 text-bold mb-2">分享</p>
+  <div class="d-flex flex-wrap share-actions"><button type="button" class="btn btn-sm share-button" data-share-action="wechat" aria-controls="share-panel-wechat" aria-expanded="false"><span class="share-icon share-icon--wechat" aria-hidden="true">
+  <span class="share-icon-badge"><svg viewBox="0 0 16 16"><path d="M5 2C2.239 2 0 3.79 0 6c0 1.235.708 2.339 1.822 3.073L1.2 11.5l2.522-1.26c.418.085.844.127 1.278.126 2.761 0 5-1.79 5-4s-2.239-4-5-4Zm0 6.866a5.13 5.13 0 0 1-1.33-.175l-.215-.058-1.31.655.301-1.14-.19-.134C1.47 7.46 1 6.755 1 6c0-1.657 1.79-3 4-3s4 1.343 4 3-1.79 2.866-4 2.866Zm6-1.366c-.313 0-.616.04-.897.115.253.414.397.882.397 1.385 0 1.924-2.015 3.5-4.5 3.5-.19 0-.377-.01-.56-.03.71.908 1.967 1.53 3.56 1.53.37.001.74-.033 1.104-.102L12.25 15l-.489-1.463C13.128 12.886 14 11.77 14 10.5c0-1.657-1.343-3-3-3Zm-3.5-2a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm-3 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm7 4a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm-3 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"></path></svg></span>
+</span><span>微信</span>
+      </button><a href="https://service.weibo.com/share/share.php?url=http%3A%2F%2Flocalhost%3A1313%2Fcn%2Fposts%2Fmermaid-uml-guide%2F&amp;title=Mermaid&#43;UML&#43;%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97" target="_blank" rel="noopener noreferrer" class="btn btn-sm share-button"><span class="share-icon share-icon--weibo" aria-hidden="true">
+  <span class="share-icon-badge"><svg viewBox="0 0 16 16"><path d="M8.052 4.002c-2.86 0-5.24 1.71-5.24 3.88 0 2.162 2.38 3.914 5.24 3.914 2.858 0 5.136-1.752 5.136-3.914 0-2.17-2.278-3.88-5.136-3.88Zm0 6.562c-2.303 0-4.02-1.283-4.02-2.682 0-1.408 1.717-2.648 4.02-2.648 2.294 0 3.915 1.24 3.915 2.648 0 1.399-1.621 2.682-3.915 2.682Zm4.762-7.17a2.78 2.78 0 0 0-1.717-.598.56.56 0 0 0 0 1.12c.462 0 .904.153 1.252.438.448.361.719.875.759 1.44a.56.56 0 0 0 .557.518h.042a.56.56 0 0 0 .517-.598 3.437 3.437 0 0 0-1.41-2.32Zm-1.134 3.74a.49.49 0 0 0 .453-.523 1.86 1.86 0 0 0-.76-1.248 1.78 1.78 0 0 0-1.126-.392.49.49 0 1 0 0 .98c.19 0 .375.064.518.181.182.147.292.36.309.59a.49.49 0 0 0 .489.412h.04Zm-5.49-.478a1.03 1.03 0 1 1 0 2.06 1.03 1.03 0 0 1 0-2.06Zm3.213 0a1.03 1.03 0 1 1 0 2.06 1.03 1.03 0 0 1 0-2.06Z"></path></svg></span>
+</span><span>微博</span>
+      </a><button type="button" class="btn btn-sm share-button" data-share-action="copy"><span class="share-icon share-icon--copy" aria-hidden="true">
+  <span class="share-icon-badge"><svg viewBox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></span>
+</span><span>复制链接</span>
+      </button></div><div id="share-panel-wechat" class="share-panel" data-share-panel="wechat" hidden>
+    <div class="share-panel-title">微信</div>
+    <p class="share-panel-text">打开微信扫一扫，即可分享这篇文章。</p>
+    <div class="share-qr-frame">
+      <img class="share-qr-image" data-share-qr alt="这篇文章的微信分享二维码">
+    </div>
+  </div><p class="share-feedback" data-share-feedback aria-live="polite"></p>
+
+  <script>
+    (function () {
+      var root = document.currentScript && document.currentScript.parentElement;
+      if (!root || root.dataset.shareReady === 'true') {
+        return;
+      }
+      root.dataset.shareReady = 'true';
+
+      var shareUrl = root.getAttribute('data-share-url') || window.location.href;
+      var feedback = root.querySelector('[data-share-feedback]');
+      var qrImage = root.querySelector('[data-share-qr]');
+      var copySuccess = root.getAttribute('data-share-copy-success');
+      var copyFailure = root.getAttribute('data-share-copy-failure');
+      var wechatPanel = root.querySelector('[data-share-panel="wechat"]');
+      var feedbackTimer;
+
+      function setFeedback(message) {
+        if (!feedback) {
+          return;
+        }
+        feedback.textContent = message || '';
+        window.clearTimeout(feedbackTimer);
+        if (message) {
+          feedbackTimer = window.setTimeout(function () {
+            feedback.textContent = '';
+          }, 2400);
+        }
+      }
+
+      function closePanels(exceptName) {
+        var panels = root.querySelectorAll('[data-share-panel]');
+        panels.forEach(function (panel) {
+          if (panel.getAttribute('data-share-panel') !== exceptName) {
+            panel.hidden = true;
+          }
+        });
+      }
+
+      function ensureQrCode() {
+        if (!qrImage || qrImage.getAttribute('src')) {
+          return;
+        }
+        qrImage.setAttribute('src', 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=' + encodeURIComponent(shareUrl));
+      }
+
+      function copyLink() {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          return navigator.clipboard.writeText(shareUrl);
+        }
+
+        return new Promise(function (resolve, reject) {
+          var input = document.createElement('input');
+          input.type = 'text';
+          input.value = shareUrl;
+          input.setAttribute('readonly', 'readonly');
+          input.style.position = 'absolute';
+          input.style.left = '-9999px';
+          document.body.appendChild(input);
+          input.select();
+          input.setSelectionRange(0, input.value.length);
+          try {
+            if (!document.execCommand('copy')) {
+              throw new Error('copy failed');
+            }
+            resolve();
+          } catch (error) {
+            reject(error);
+          } finally {
+            document.body.removeChild(input);
+          }
+        });
+      }
+
+      root.querySelectorAll('[data-share-action]').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var action = button.getAttribute('data-share-action');
+
+          if (action === 'copy') {
+            closePanels();
+            copyLink().then(function () {
+              setFeedback(copySuccess);
+            }).catch(function () {
+              setFeedback(copyFailure + ' ' + shareUrl);
+            });
+            return;
+          }
+
+          if (action === 'wechat' && wechatPanel) {
+            var willOpen = wechatPanel.hidden;
+            closePanels(willOpen ? 'wechat' : '');
+            if (willOpen) {
+              ensureQrCode();
+            }
+            wechatPanel.hidden = !willOpen;
+            button.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+          }
+        });
+      });
+    })();
+  </script>
+</div><div class="border-top pt-4 mt-4">
+  <h2 class="f4 mb-3">评论</h2>
+  <div id="giscus-container"></div>
+</div>
+
+<script>
+(function () {
+  function getGiscusTheme() {
+    var mode = document.documentElement.getAttribute('data-color-mode');
+    if (mode === 'dark') return 'dark';
+    if (mode === 'light') return 'light';
+    return 'preferred_color_scheme';
+  }
+
+  
+  var script = document.createElement('script');
+  script.src = 'https://giscus.app/client.js';
+  script.setAttribute('data-repo', 'q1w264/MyBlog');
+  script.setAttribute('data-repo-id', 'R_kgDOQ-lMpQ');
+  script.setAttribute('data-category', 'Comments');
+  script.setAttribute('data-category-id', 'DIC_kwDOQ-lMpc4DARnw');
+  script.setAttribute('data-mapping', 'pathname');
+  script.setAttribute('data-strict', '0');
+  script.setAttribute('data-reactions-enabled', '1');
+  script.setAttribute('data-emit-metadata', '0');
+  script.setAttribute('data-input-position', 'bottom');
+  script.setAttribute('data-theme', getGiscusTheme());
+  script.setAttribute('data-lang', 'zh-CN');
+  script.setAttribute('data-loading', 'lazy');
+  script.setAttribute('crossorigin', 'anonymous');
+  script.async = true;
+  document.getElementById('giscus-container').appendChild(script);
+
+  
+  var observer = new MutationObserver(function () {
+    var iframe = document.querySelector('iframe.giscus-frame');
+    if (iframe) {
+      iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: getGiscusTheme() } } },
+        'https://giscus.app'
+      );
+    }
+  });
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-color-mode']
+  });
+})();
+</script><nav class="border-top pt-4 mt-4">
+    <div class="d-flex flex-justify-between"><a href="/cn/posts/programming-pattern/command-pattern/" class="Link--secondary">
+        &larr; Command Pattern
+      </a></div>
+  </nav></article>
+          </div>
+          <div class="Layout-sidebar"><aside><div class="color-bg-subtle rounded-2 p-3 mb-3">
+  <h3 class="h5 mb-2">关于我</h3>
+  <div class="d-flex flex-items-center mb-2">
+    <a href="/cn/about/" aria-label="关于我">
+      <img src="/images/logo.png" alt="Author" class="avatar avatar-6 mr-2" width="48" height="48">
+    </a>
+    <div>
+      <strong class="d-block">q1w264</strong>
+      <span class="f6 color-fg-muted">开发者 &amp; 学生</span>
+    </div>
+  </div>
+  <p class="f6 color-fg-muted mb-0">
+    欢迎来到我的博客！
+  </p>
+</div>
+<div class="color-bg-subtle rounded-2 p-3 mb-3">
+  <h3 class="h5 mb-2">关注我</h3>
+  <div class="d-flex flex-wrap">
+    <a href="https://github.com/q1w264" class="btn btn-sm mr-1 mb-1" target="_blank" rel="noopener">
+      <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+        <path fill="currentColor"
+          d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
+        </path>
+      </svg>
+      GitHub
+    </a>
+    
+  </div>
+</div><div class="color-bg-subtle rounded-2 p-3 mb-3">
+  <h3 class="h5 mb-2">分类</h3>
+  <ul class="list-style-none"><li class="mb-1">
+      <a href="/cn/categories/documentation/" class="Link--secondary">
+        文档 <span class="Counter Counter--secondary ml-1">2</span>
+      </a>
+    </li><li class="mb-1">
+      <a href="/cn/categories/reading-note/" class="Link--secondary">
+        读书笔记 <span class="Counter Counter--secondary ml-1">1</span>
+      </a>
+    </li><li class="mb-1">
+      <a href="/cn/categories/tutorial/" class="Link--secondary">
+        教程 <span class="Counter Counter--secondary ml-1">1</span>
+      </a>
+    </li></ul>
+</div><div class="color-bg-subtle rounded-2 p-3 mb-3">
+  <h3 class="h5 mb-2">近期文章</h3>
+  <ul class="list-style-none"><li class="mb-2">
+      <a href="/cn/posts/mermaid-uml-guide/" class="Link--primary">Mermaid UML 使用指南</a><span class="color-fg-muted f6 d-block">
+        2026-07-11
+      </span></li><li class="mb-2">
+      <a href="/cn/posts/programming-pattern/command-pattern/" class="Link--primary">Command Pattern</a><span class="color-fg-muted f6 d-block">
+        2026-07-06
+      </span></li><li class="mb-2">
+      <a href="/cn/posts/getting-started-with-hugo/" class="Link--primary">Hugo 入门指南</a><span class="color-fg-muted f6 d-block">
+        2026-06-27
+      </span></li><li class="mb-2">
+      <a href="/cn/posts/gfm-demo/" class="Link--primary">GitHub Flavored Markdown Demo</a><span class="color-fg-muted f6 d-block">
+        2024-01-20
+      </span></li></ul>
+</div><div class="color-bg-subtle rounded-2 p-3 mb-3">
+  <h3 class="h5 mb-2">
+    <a href="/cn/tags/" class="Link--primary">标签</a>
+  </h3>
+  <div class="sidebar-collapsible d-flex flex-wrap" style="gap: 0.5rem;"
+    data-max-height="150"
+    data-view-all="/cn/tags/"
+    data-label-more="显示更多"
+    data-label-less="显示更少"
+    data-label-view-all="查看全部"><a href="/cn/tags/c-sharp/" class="topic-tag">C#</a><a href="/cn/tags/demo/" class="topic-tag">示例</a><a href="/cn/tags/gfm/" class="topic-tag">GFM</a><a href="/cn/tags/hugo/" class="topic-tag">Hugo</a><a href="/cn/tags/markdown/" class="topic-tag">Markdown</a><a href="/cn/tags/mermaid/" class="topic-tag">mermaid</a><a href="/cn/tags/programming-patterns/" class="topic-tag">编程模式</a><a href="/cn/tags/static-site/" class="topic-tag">静态网站</a><a href="/cn/tags/uml/" class="topic-tag">uml</a><a href="/cn/tags/%E6%96%87%E6%A1%A3/" class="topic-tag">文档</a></div>
+</div></aside></div>
+        </div></div>
+    </main><footer class="site-footer border-top mt-6" role="contentinfo">
+  <div class="container-xl px-3 px-md-4 px-lg-5">
+    <div class="site-footer-main text-center">
+      <p class="site-footer-copyright color-fg-muted mb-0">&copy; 2026 q1w264. 版权所有.&nbsp;&nbsp;<a href="/cn/privacy/">隐私政策</a> · <a href="/cn/disclaimer/">免责声明</a></p>
+    </div>
+  </div>
+</footer>
+</div><script src="/js/theme-switcher.min.339cb8828f7501e328cd7310b6c9269028c2b0aa83d993dabdd165df045dc52e.js" integrity="sha256-M5y4go91AeMozXMQtskmkCjCsKqD2ZPavdFl3wRdxS4="></script><script src="/js/sidebar.min.8d897965d82e39784b4da02d345c06f44ecdff6252fcf44c20eeb421f1027114.js" integrity="sha256-jYl5ZdguOXhLTaAtNFwG9E7N/2JS/PRMIO60IfECcRQ="></script></body>
+</html>
