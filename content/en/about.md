@@ -1,5 +1,5 @@
 ---
-title: "Shilong Yuan (q1w264)"
+title: "Shilong Yuan"
 draft: false
 hideReadingTime: true
 hideSidebar: true
