@@ -1,14 +1,14 @@
-baseURL = "https://www.q1w264.com/"
+baseURL = "https://www.s10nfault.com"
 theme = "hugo-primer-blog"
-copyright = '© 2026 q1w264'
+copyright = '© 2026 Shilong Yuan'
 
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 
 [params]
-author = "q1w264"
+author = "s10nfault"
 aboutName = "Shilong Yuan"
-email = "shilong.yuan@q1w264.com"
+email = "shilong.yuan@s10nfault.com"
 dateFormat = "2006-01-02" 
 defaultTheme = "auto" # auto, light, or dark
 googleAnalyticsID = "G-QP462JDKRZ" # Google Analytics 4 ID
@@ -21,7 +21,7 @@ avatar = "images/logo.png"
 
 [Author] # Used in authorbox
 bio = "知识就是力量"
-name = "q1w264"
+name = "Shilong"
 # Sidebar modules - order determines display order
 # Available: recentPosts, tags, categories, archive, links (+ custom partials)
 [[params.sidebarModules]]
@@ -41,7 +41,7 @@ partial = "tags"
 partial = "archive"
 
 [params.social]
-github = "q1w264"
+github = "s10nfault"
 
 [params.languageLabels]
 en = "English"
@@ -85,7 +85,7 @@ sizes = "152x152"
 [languages.en]
 contentDir = "content/en"
 label = "English"
-title = "q1w264's Blog"
+title = "s10nfault's Blog"
 weight = 1
 [languages.en.params]
 copyrightLinks = '[Privacy Policy](/en/privacy/) · [Disclaimer](/en/disclaimer/)'
@@ -94,7 +94,7 @@ copyrightLinks = '[Privacy Policy](/en/privacy/) · [Disclaimer](/en/disclaimer/
 [languages.cn]
 contentDir = "content/cn"
 label = "简体中文"
-title = "q1w264的博客"
+title = "s10nfault的个人博客"
 weight = 2
 [languages.cn.params]
 copyrightLinks = '[隐私政策](/cn/privacy/) · [免责声明](/cn/disclaimer/)'
