@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/en/</loc>
-    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
+    <lastmod>2026-09-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/en/categories/</loc>
-    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
+    <lastmod>2026-09-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -27,6 +27,44 @@
                 hreflang="cn"
                 href="http://localhost:1313/cn/categories/"
                 />
+  </url><url>
+    <loc>http://localhost:1313/en/categories/dev-notes/</loc>
+    <lastmod>2026-09-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/en/tags/game-design/</loc>
+    <lastmod>2026-09-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/en/posts/</loc>
+    <lastmod>2026-09-22T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/posts/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/en/tags/</loc>
+    <lastmod>2026-09-22T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/tags/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/en/posts/voidrunner/devnotes/</loc>
+    <lastmod>2026-09-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/en/tags/voidrunner/</loc>
+    <lastmod>2026-09-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/en/categories/documentation/</loc>
     <lastmod>2026-07-11T00:00:00+00:00</lastmod>
@@ -70,32 +108,6 @@
                 href="http://localhost:1313/cn/posts/mermaid-uml-guide/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/posts/</loc>
-    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/en/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="http://localhost:1313/cn/posts/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/en/tags/</loc>
-    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="http://localhost:1313/cn/tags/"
-                />
-  </url><url>
     <loc>http://localhost:1313/en/tags/uml/</loc>
     <lastmod>2026-07-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -110,7 +122,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/en/tags/c-sharp/</loc>
-    <lastmod>2026-07-06T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -120,6 +132,35 @@
                 rel="alternate"
                 hreflang="cn"
                 href="http://localhost:1313/cn/tags/c-sharp/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/en/posts/programming-pattern/plyweight-pattern/</loc>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/en/tags/programming-patterns/</loc>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/tags/programming-patterns/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/tags/programming-patterns/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/en/categories/reading-note/</loc>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/categories/reading-note/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/categories/reading-note/"
                 />
   </url><url>
     <loc>http://localhost:1313/en/posts/programming-pattern/command-pattern/</loc>
@@ -133,32 +174,6 @@
                 rel="alternate"
                 hreflang="cn"
                 href="http://localhost:1313/cn/posts/programming-pattern/command-pattern/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/en/tags/programming-patterns/</loc>
-    <lastmod>2026-07-06T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/en/tags/programming-patterns/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="http://localhost:1313/cn/tags/programming-patterns/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/en/categories/reading-note/</loc>
-    <lastmod>2026-07-06T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/en/categories/reading-note/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="http://localhost:1313/cn/categories/reading-note/"
                 />
   </url><url>
     <loc>http://localhost:1313/en/posts/getting-started-with-hugo/</loc>
@@ -211,6 +226,58 @@
                 rel="alternate"
                 hreflang="cn"
                 href="http://localhost:1313/cn/categories/tutorial/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/en/tags/demo/</loc>
+    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/tags/demo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/tags/demo/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/en/tags/gfm/</loc>
+    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/tags/gfm/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/tags/gfm/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/en/posts/gfm-demo/</loc>
+    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/posts/gfm-demo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/posts/gfm-demo/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/en/tags/markdown/</loc>
+    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/tags/markdown/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/tags/markdown/"
                 />
   </url>
 </urlset>
