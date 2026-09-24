@@ -34,11 +34,11 @@
 		
 			<atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>The original design of voidrunner development</title>
+				<title>The Original Design of Voidrunner</title>
 				<link>http://localhost:1313/en/posts/voidrunner/devnotes/</link>
 				<pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/en/posts/voidrunner/devnotes/</guid>
-				<description>&lt;h2 id=&#34;initial-idea&#34;&gt;Initial idea&lt;/h2&gt;&#xA;&lt;p&gt;When I&amp;rsquo;m thinking about how to design Voidrunner, The first idea came to my mind is speed.&lt;/p&gt;&#xA;&lt;p&gt;In this game, it needs speed everywhere: Players need speed up themselves in the game to make sure they have enough speed to defeat enemy or finish the level.&lt;/p&gt;&#xA;&lt;h2 id=&#34;core-gameplay&#34;&gt;Core gameplay&lt;/h2&gt;&#xA;&lt;p&gt;The player can use gravity, props or even damage form enemy to speed up. When they have enough speed to pass enemy, they can defeat them. And there are some level need speed to pass the gap between the platform.&lt;/p&gt;</description>
+				<description>&lt;h2 id=&#34;initial-idea&#34;&gt;Initial idea&lt;/h2&gt;&#xA;&lt;p&gt;When I first started thinking about how to design &lt;em&gt;Voidrunner&lt;/em&gt;, the first idea that came to my mind was &lt;strong&gt;speed&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Speed is a core mechanic throughout the game. Players need to build up enough speed to defeat enemies, overcome obstacles, and complete certain parts of a level.&lt;/p&gt;&#xA;&lt;h2 id=&#34;core-gameplay&#34;&gt;Core gameplay&lt;/h2&gt;&#xA;&lt;p&gt;When the player reaches a high enough speed, they can defeat certain enemies by crashing into them. Some parts of a level also require the player to build up enough speed to jump across large gaps.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Mermaid UML Guide</title>

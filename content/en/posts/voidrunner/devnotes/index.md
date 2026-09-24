@@ -1,20 +1,40 @@
 +++
 date = '2026-09-22'
-draft = true
-title = 'The original design of voidrunner development'
+draft = false
+title = 'The Original Design of Voidrunner'
 contentType = 'original'
-tags = ["voidrunner", "game design"]
+tags = ["Voidrunner", "game design"]
 archives = ["2026-09"]
-categories = ["dev notes"]
-description = 'The initial idea about voidrunner.'
+categories = ["Dev Notes"]
+description = 'The initial design ideas for Voidrunner.'
 +++
 
 ## Initial idea
 
-When I'm thinking about how to design Voidrunner, The first idea came to my mind is speed.
+When I first started thinking about how to design *Voidrunner*, the first idea that came to my mind was **speed**.
 
-In this game, it needs speed everywhere: Players need speed up themselves in the game to make sure they have enough speed to defeat enemy or finish the level.
+Speed is a core mechanic throughout the game. Players need to build up enough speed to defeat enemies, overcome obstacles, and complete certain parts of a level.
 
 ## Core gameplay
 
-The player can use gravity, props or even damage form enemy to speed up. When they have enough speed to pass enemy, they can defeat them. And there are some level need speed to pass the gap between the platform.
+When the player reaches a high enough speed, they can defeat certain enemies by crashing into them. Some parts of a level also require the player to build up enough speed to jump across large gaps.
+
+## Current ideas
+
+- Taking damage increases the player's speed.
+- Each level may contain areas that require the player to reach a certain speed to progress.
+
+## Inspiration
+
+- *Legbreaker*: triggering a special ability by taking damage
+- *Celeste*: momentum-based movement
+- *Portal*: using external forces and momentum to travel through levels
+- *Leap Year*: discovering hidden movement abilities through trial and error.
+
+## Question
+
+- How can I design each level around the speed mechanic?
+
+## Next Step
+
+Create a basic prototype.
